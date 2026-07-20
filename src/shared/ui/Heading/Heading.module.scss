@@ -1,28 +1,50 @@
-@use '../../lib/styles/mixins' as *;
-
 .heading {
   
   &.h1 {
-    @include text-style('headline_1');
+    font-family: var(--font-family-headline);
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 1.05;
+    letter-spacing: -0.0375em;
   }
 
   &.h2 {
-    @include text-style('headline_2');
+    font-family: var(--font-family-headline);
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 1.06;
+    letter-spacing: -0.02777778em;
   }
 
   &.h3 {
-    @include text-style('headline_3');
+    font-family: var(--font-family-headline);
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 1.07;
+    letter-spacing: -0.0185185em;
   }
 
   &.h4 {
-    @include text-style('headline_4');
+    font-family: var(--font-family-headline);
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
 
   &.h5 {
-    @include text-style('headline_5');
+    font-family: var(--font-family-headline);
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.12;
+    letter-spacing: -0.017647em;
   }
 
   &.h6 {
-    @include text-style('headline_6');
+    font-family: var(--font-family-headline);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.21;
+    letter-spacing: -0.02142857em;
   }
 }

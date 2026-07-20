@@ -1,5 +1,5 @@
 import Container from '@/shared/ui/Container'
-import Heading from '@/shared/ui/Heading'
+import Paragraph from '@/shared/ui/Paragraph'
 import './styles'
 
 const App = () => {
@@ -7,20 +7,18 @@ const App = () => {
     <Container>
       <Container.Split>
         <Container.SplitLeft>
-          <Heading
-            level='h1'
-
+          <Paragraph
+            variantText='body_1'
           >
-            Заголовок 1
-          </Heading>
+            Параграф 1
+          </Paragraph>
         </Container.SplitLeft>
         <Container.SplitRight>
-          <Heading
-            level='h1'
-
+          <Paragraph
+            variantText='body_2'
           >
-            Заголовок 2
-          </Heading>
+            Параграф 2
+          </Paragraph>
         </Container.SplitRight>
       </Container.Split>
     </Container>
