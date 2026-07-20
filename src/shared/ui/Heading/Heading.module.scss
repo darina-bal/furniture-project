@@ -1,0 +1,28 @@
+@use '../../lib/styles/mixins' as *;
+
+.heading {
+  
+  &.h1 {
+    @include text-style('headline_1');
+  }
+
+  &.h2 {
+    @include text-style('headline_2');
+  }
+
+  &.h3 {
+    @include text-style('headline_3');
+  }
+
+  &.h4 {
+    @include text-style('headline_4');
+  }
+
+  &.h5 {
+    @include text-style('headline_5');
+  }
+
+  &.h6 {
+    @include text-style('headline_6');
+  }
+}

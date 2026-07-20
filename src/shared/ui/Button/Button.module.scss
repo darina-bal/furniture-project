@@ -1,0 +1,134 @@
+@use '../../styles/mixins' as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  transition: var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-touch-callout: none;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: var(--transform);
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      transform: var(--transform);
+    }
+  }
+
+  &.first {
+    border: var(--border-main);
+    border-radius: var(--brs-1);
+    color: var(--neutral-color-07);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--neutral-color-01);
+        background-color: var(--neutral-color-07);
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        color: var(--neutral-color-01);
+        background-color: var(--neutral-color-07);
+      }
+    }
+  }
+
+  &.second {
+    border: var(--border-main);
+    border-radius: var(--brs-2);
+    color: var(--neutral-color-07);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--neutral-color-01);
+        background-color: var(--neutral-color-07);
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        color: var(--neutral-color-01);
+        background-color: var(--neutral-color-07);
+      }
+    }
+  }
+
+  &.third {
+    color: var(--neutral-color-07);
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background-color: black;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        &::before{
+          opacity: 1;
+        }
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        &::before{
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.fourth {
+    color: var(--neutral-color-04);
+    
+    .crossInButton {
+      margin-right: 4px;
+    }
+  }
+
+  &.button_xl {
+    @include text-style('button_xl');
+  }
+
+  &.button_l {
+    @include text-style('button_l');
+  }
+
+  &.button_m {
+    @include text-style('button_m');
+    height: var(--height-button-m);
+    padding-left: var(--padding-button-m);
+    padding-right: var(--padding-button-m);
+  }
+
+  &.button_s {
+    @include text-style('button_s');
+    height: var(--height-button-s);
+    padding-left: var(--padding-button-s);
+    padding-right: var(--padding-button-s);
+  }
+
+  &.button_xs {
+    @include text-style('button_xs');
+  }
+}

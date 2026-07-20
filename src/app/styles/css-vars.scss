@@ -1,0 +1,43 @@
+:root {
+    // containers 
+    --container-padding: 160px;
+    --container-padding-mobile: 32px;
+
+    // fonts 
+    --font-family-main: 'Inter', sans-serif;
+    --font-family-headline: 'Poppins', sans-serif;
+
+    // colors-main
+    --text-color-main: #000000;
+    --text-color-main-accent: #3E3E59;
+    --bgc-main: #FFFFFF;
+
+    // colors
+    --secondary-color-1: #377DFF;
+    --secondary-color-2: #38CB89;
+    --secondary-color-3: #FFAB00;
+    --secondary-color-4: #FF5630;
+    --neutral-color-01: #FEFEFE;
+    --neutral-color-02: #F3F5F7;
+    --neutral-color-03: #E8ECEF;
+    --neutral-color-04: #6C7275;
+    --neutral-color-05: #343839;
+    --neutral-color-06: #232627;
+    --neutral-color-07: #141718;
+
+    // border
+    --brs-1: 8px;
+    --brs-2: 80px;
+    --border-main: 1px solid var(--neutral-color-07);
+
+    // animation
+    --transition: all ease-in 0.2s;
+    --transform: scale(1.1);
+
+    // button
+    --font-weight-button: 500;
+    --height-button-s: 40px;
+    --padding-button-s: 40px;
+    --height-button-m: 52px;
+    --padding-button-m: 52px;
+}

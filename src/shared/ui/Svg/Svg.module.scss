@@ -1,0 +1,29 @@
+.icon {
+  width: 24px;
+  height: 24px;
+
+  &.stroke {
+    fill: none;
+    stroke: var(--neutral-color-07);
+  }
+
+  &.fillAndStroke {
+    fill: var(--neutral-color-07);
+    stroke: var(--neutral-color-07);
+  }
+
+  &.stroke-fair {
+    fill: none;
+    stroke: var(--neutral-color-04);
+  }
+  
+  &.fill-fair {
+    fill: var(--neutral-color-04);
+    stroke: none;
+  }
+
+  &.fillAndStroke-fair {
+    fill: var(--neutral-color-04);
+    stroke: var(--neutral-color-04);
+  }
+}

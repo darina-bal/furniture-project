@@ -1,0 +1,30 @@
+@use '../../lib/styles/scss-vars.scss' as *;
+
+// Page container 
+.container {
+  padding: 0 var(--container-padding);
+  max-width: $const_desktop_px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: $laptop-size) {
+    padding: 0 var(--container-padding-mobile);
+  }
+}
+
+// Two-column container 
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.splitLeft,
+.splitRight {
+  flex: 1 1; /* Позволяем элементам расти и сжиматься */
+  min-width: 0; /* Предотвращает переполнение при очень узких экранах */
+
+  @media (max-width: $laptop-size) {
+    flex: 1 1 100%; /* Каждый контейнер занимает 100 % ширины */
+  }
+}

@@ -1,0 +1,242 @@
+// размеры экрана
+$mobile-size: 599px;
+$tablet-size: 959px;
+$laptop-size: 1199px;
+
+$const_mobile_px: 375px;
+$const_desktop_px: 1440px;
+
+// карта стилей
+$typography: (
+
+  // headlines
+  'headline_1': (
+    font-family: var(--font-family-headline),
+    font-weight: 500,
+    font-size: 80px,
+    line-height: 1.05,
+    letter-spacing: -0.0375em
+  ),
+  'headline_2': (
+    font-family: var(--font-family-headline),
+    font-weight: 500,
+    font-size: 72px,
+    line-height: 1.06,
+    letter-spacing: -0.02777778em
+  ),
+  'headline_3': (
+    font-family: var(--font-family-headline),
+    font-weight: 500,
+    font-size: 54px,
+    line-height: 1.07,
+    letter-spacing: -0.0185185em
+  ),
+  'headline_4': (
+    font-family: var(--font-family-headline),
+    font-weight: 500,
+    font-size: 40px,
+    line-height: 1.1,
+    letter-spacing: -0.01em
+  ),
+  'headline_5': (
+    font-family: var(--font-family-headline),
+    font-weight: 500,
+    font-size: 34px,
+    line-height: 1.12,
+    letter-spacing: -0.017647em
+  ),
+  'headline_6': (
+    font-family: var(--font-family-headline),
+    font-weight: 500,
+    font-size: 28px,
+    line-height: 1.21,
+    letter-spacing: -0.02142857em
+  ),
+
+  // text-regular
+  'text_26_regular': (
+    font-family: var(--font-family-main),
+    font-weight: 400,
+    font-size: 26px,
+    line-height: 1.54,
+    color: var(--text-color-main-accent)
+  ),
+  'text_22_regular': (
+    font-family: var(--font-family-main),
+    font-weight: 400,
+    font-size: 22px,
+    line-height: 1.55,
+    color: var(--text-color-main-accent)
+  ),
+  'body_1': (
+    font-family: var(--font-family-main),
+    font-weight: 400,
+    font-size: 20px,
+    line-height: 1.6,
+    color: var(--text-color-main-accent)
+  ),
+  'text_18_regular': (
+    font-family: var(--font-family-main),
+    font-weight: 400,
+    font-size: 18px,
+    line-height: 1.67,
+    color: var(--text-color-main-accent)
+  ),
+  'body_2': (
+    font-family: var(--font-family-main),
+    font-weight: 400,
+    font-size: 16px,
+    line-height: 1.62,
+    color: var(--text-color-main-accent)
+  ),
+  'caption_1': (
+    font-family: var(--font-family-main),
+    font-weight: 400,
+    font-size: 14px,
+    line-height: 1.57,
+    color: var(--text-color-main-accent)
+  ),
+  'caption_2': (
+    font-family: var(--font-family-main),
+    font-weight: 400,
+    font-size: 12px,
+    line-height: 1.67,
+    color: var(--text-color-main-accent)
+  ),
+
+  // text-semibold
+  'text_26_semibold': (
+    font-family: var(--font-family-main),
+    font-weight: 600,
+    font-size: 26px,
+    line-height: 1.54,
+    color: var(--text-color-main-accent)
+  ),
+  'text_22_semibold': (
+    font-family: var(--font-family-main),
+    font-weight: 600,
+    font-size: 22px,
+    line-height: 1.55,
+    color: var(--text-color-main-accent)
+  ),
+  'body_1_semi': (
+    font-family: var(--font-family-main),
+    font-weight: 600,
+    font-size: 20px,
+    line-height: 1.6,
+    color: var(--text-color-main-accent)
+  ),
+  'text_18_semibold': (
+    font-family: var(--font-family-main),
+    font-weight: 600,
+    font-size: 18px,
+    line-height: 1.67,
+    color: var(--text-color-main-accent)
+  ),
+  'body_2_semi': (
+    font-family: var(--font-family-main),
+    font-weight: 600,
+    font-size: 16px,
+    line-height: 1.62,
+    color: var(--text-color-main-accent)
+  ),
+  'caption_1_semi': (
+    font-family: var(--font-family-main),
+    font-weight: 600,
+    font-size: 14px,
+    line-height: 1.57,
+    color: var(--text-color-main-accent)
+  ),
+  'caption_2_semi': (
+    font-family: var(--font-family-main),
+    font-weight: 600,
+    font-size: 12px,
+    line-height: 1.67,
+    color: var(--text-color-main-accent)
+  ),
+
+  // text-bold
+  'text_26_bold': (
+    font-family: var(--font-family-main),
+    font-weight: 700,
+    font-size: 26px,
+    line-height: 1.54,
+    color: var(--text-color-main-accent)
+  ),
+  'text_22_bold': (
+    font-family: var(--font-family-main),
+    font-weight: 700,
+    font-size: 22px,
+    line-height: 1.55,
+    color: var(--text-color-main-accent)
+  ),
+  'body_1_bold': (
+    font-family: var(--font-family-main),
+    font-weight: 700,
+    font-size: 20px,
+    line-height: 1.6,
+    color: var(--text-color-main-accent)
+  ),
+  'text_18_bold': (
+    font-family: var(--font-family-main),
+    font-weight: 700,
+    font-size: 18px,
+    line-height: 1.67,
+    color: var(--text-color-main-accent)
+  ),
+  'body_2_bold': (
+    font-family: var(--font-family-main),
+    font-weight: 700,
+    font-size: 16px,
+    line-height: 1.62,
+    color: var(--text-color-main-accent)
+  ),
+  'caption_1_bold': (
+    font-family: var(--font-family-main),
+    font-weight: 700,
+    font-size: 14px,
+    line-height: 1.57,
+    color: var(--text-color-main-accent)
+  ),
+  'caption_2_bold': (
+    font-family: var(--font-family-main),
+    font-weight: 700,
+    font-size: 12px,
+    line-height: 1.67,
+    color: var(--text-color-main-accent)
+  ),
+
+  // buttons
+  'button_xl': (
+    font-family: var(--font-family-main),
+    font-weight: var(--font-weight-button),
+    font-size: 26px,
+    line-height: 1.46
+  ),
+  'button_l': (
+    font-family: var(--font-family-main),
+    font-weight: var(--font-weight-button),
+    font-size: 22px,
+    line-height: 1.55
+  ),
+  'button_m': (
+    font-family: var(--font-family-main),
+    font-weight: var(--font-weight-button),
+    font-size: 18px,
+    line-height: 1.78,
+    letter-spacing: -0.0222222222em
+  ),
+  'button_s': (
+    font-family: var(--font-family-main),
+    font-weight: var(--font-weight-button),
+    font-size: 16px,
+    line-height: 1.75,
+    letter-spacing: -0.025em
+  ),
+  'button_xs': (
+    font-family: var(--font-family-main),
+    font-weight: var(--font-weight-button),
+    font-size: 14px,
+    line-height: 1.71
+  )
+);
