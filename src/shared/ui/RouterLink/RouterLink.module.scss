@@ -1,0 +1,80 @@
+.link {
+  color: var(--neutral-color-07);
+
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-button);
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: -0.025em;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: var(--transition);
+  position: relative;
+
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-touch-callout: none;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: var(--link-opacity);
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      opacity: var(--link-opacity);
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: var(--neutral-color-07);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: var(--transition);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      &::before{
+        opacity: var(--link-opacity);
+      }
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      &::before{
+        opacity: var(--link-opacity);
+      }
+    }
+  }
+
+  .arrowRight {
+    width: 20px;
+    height: 20px;
+
+    margin-left: 4px;
+  }
+}
+
+.navLink {
+  color: var(--neutral-color-04);
+
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-button);
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.navLinkActive {
+  color: var(--neutral-color-07);
+}
