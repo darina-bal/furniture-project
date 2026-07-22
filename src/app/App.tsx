@@ -1,11 +1,9 @@
-import CartButton from '@/entities/cart/ui/CartButton'
+import Logo from '@/shared/ui/Logo'
 import './styles'
 
 const App = () => {
   return (
-    <CartButton
-      
-    ></CartButton>
+    <Logo />
   )
 }
 
