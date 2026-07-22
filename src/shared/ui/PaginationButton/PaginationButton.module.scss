@@ -1,0 +1,33 @@
+.paginationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .buttonArrowLeft {
+    background-color: var(--neutral-color-01);
+    border-radius: var(--brs-3);
+
+    width: 52px;
+    height: 52px;
+
+    .arrowLeft {
+      transform: rotate(180deg);
+  
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .buttonArrowRight {
+    background-color: var(--neutral-color-01);
+    border-radius: var(--brs-3);
+
+    width: 52px;
+    height: 52px;
+
+    .arrowRight {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.cartWrapper {
+  // display: inline-flex;
+  // justify-content: center;
+  // align-items: center;
+  gap: 5px;
+
+  .count {
+    padding: 5px 6px;
+    color: var(--neutral-color-01);
+    background-color: var(--neutral-color-07);
+    border-radius: var(--brs-4);
+    font-family: var(--font-family-main);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 0.83;
+  }
+}

@@ -2,7 +2,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
   border: none;
   padding: 0;
   transition: var(--transition);
@@ -23,7 +22,7 @@
     }
   }
 
-  &.first {
+  &.primary {
     border: var(--border-main);
     border-radius: var(--brs-1);
     color: var(--neutral-color-07);
@@ -43,7 +42,7 @@
     }
   }
 
-  &.second {
+  &.secondary {
     border: var(--border-main);
     border-radius: var(--brs-2);
     color: var(--neutral-color-07);
@@ -63,7 +62,7 @@
     }
   }
 
-  &.third {
+  &.tertiary {
     color: var(--neutral-color-07);
     position: relative;
     

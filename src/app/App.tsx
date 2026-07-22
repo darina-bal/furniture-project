@@ -1,13 +1,11 @@
-import Button from '@/shared/ui/Button'
+import CartButton from '@/entities/cart/ui/CartButton'
 import './styles'
 
 const App = () => {
   return (
-    <Button
-      variantBg='cart'
-      count='9'
-    >
-    </Button>
+    <CartButton
+      
+    ></CartButton>
   )
 }
 
