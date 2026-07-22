@@ -5,8 +5,8 @@ import {
   type NavLinkProps, 
   type NavLinkRenderProps
  } from 'react-router'
- import Svg from '../Svg'
- import styles from './RouterLink.module.scss'
+import Svg from '../Svg'
+import styles from './RouterLink.module.scss'
 
 type RouterLinkProps = 
   | ({ linkType?: 'link' } & LinkProps)

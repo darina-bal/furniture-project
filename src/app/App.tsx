@@ -1,9 +1,16 @@
-import Logo from '@/shared/ui/Logo'
+import { BrowserRouter, Routes, Route } from 'react-router'
+import Landing from '@/pages/Landing'
+import Shop from '@/pages/Shop'
 import './styles'
 
 const App = () => {
   return (
-    <Logo />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='shop' element={<Shop />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

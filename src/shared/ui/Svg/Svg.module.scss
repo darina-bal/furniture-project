@@ -7,19 +7,24 @@
     stroke: var(--neutral-color-07);
   }
 
-  &.fillAndStroke {
-    fill: var(--neutral-color-07);
-    stroke: var(--neutral-color-07);
-  }
-
   &.stroke-fair {
     fill: none;
     stroke: var(--neutral-color-04);
   }
-  
+
+  &.fill {
+    fill: var(--neutral-color-07);
+    stroke: none;
+  }
+
   &.fill-fair {
     fill: var(--neutral-color-04);
     stroke: none;
+  }
+
+  &.fillAndStroke {
+    fill: var(--neutral-color-07);
+    stroke: var(--neutral-color-07);
   }
 
   &.fillAndStroke-fair {
