@@ -63,9 +63,9 @@ const RouterLink = (props: RouterLinkProps) => {
     <Link className={resolvedClassName} {...rest}>
       {children}
       <Svg 
-      iconName='arrow-right'
-      spriteType='mono'
-      className={styles.arrowRight}/>
+        iconName='arrow-right'
+        spriteType='mono'
+        className={styles.arrowRight}/>
     </Link>
   )
 }

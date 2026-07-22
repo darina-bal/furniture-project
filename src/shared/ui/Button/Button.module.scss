@@ -96,11 +96,44 @@
     }
   }
 
-  &.fourth {
+  &.remove {
     color: var(--neutral-color-04);
     
-    .crossInButton {
+    .crossInRemove {
       margin-right: 4px;
+    }
+  }
+
+  &.pagination {
+    width: 52px;
+    height: 52px;
+
+    background-color: var(--neutral-color-01);
+    border-radius: var(--brs-3);
+
+    .arrowRight {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &.cart {
+    .cartWrapper {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      .count {
+        padding: 5px 6px;
+        color: var(--neutral-color-01);
+        background-color: var(--neutral-color-07);
+        border-radius: var(--brs-4);
+        font-family: var(--font-family-main);
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 0.83;
+      }
     }
   }
 

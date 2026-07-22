@@ -73,6 +73,18 @@
   font-weight: var(--font-weight-button);
   font-size: 14px;
   line-height: 1.71;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: var(--link-opacity);
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      opacity: var(--link-opacity);
+    }
+  }
 }
 
 .navLinkActive {
