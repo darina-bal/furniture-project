@@ -31,34 +31,37 @@ const NotificationBar = () => {
       <Container
         className={styles.wrapper}
       >
-        <Svg 
-          iconName='ticket-percent'
-          spriteType='mono'
-          variant='fill'
-        />
-        <Paragraph
-          variantText='caption_1_semi'
+        <div className={styles.textWrapper}>
+          <Svg 
+            iconName='ticket-percent'
+            spriteType='mono'
+            variant='fill'
+            className={styles.iconTicketPercent}
+          />
+          <Paragraph
+            className={styles.title}
+          >
+            30% off storewide — Limited time! 
+          </Paragraph>
+          <RouterLink
+            to='shop'
+            className={styles.link}
+          >
+            Shop Now
+          </RouterLink>
+        </div>
+        <Button
+          variant='ghost'
+          className={styles.crossButton}
+          onClick={handleCloseClick}
         >
-          30% off storewide — Limited time! 
-        </Paragraph>
-        <RouterLink
-          to='shop'
-          className={styles.link}
-        >
-          Shop Now
-        </RouterLink>
+          <Svg 
+            iconName='cross'
+            spriteType='mono'
+            variant='fill-fair'
+            className={styles.cross} />
+        </Button>
       </Container>
-      <Button
-        variant='ghost'
-        className={styles.crossButton}
-        onClick={handleCloseClick}
-      >
-        <Svg 
-          iconName='cross'
-          spriteType='mono'
-          variant='fill-fair'
-          className={styles.cross} />
-      </Button>
     </div>
   )
 }

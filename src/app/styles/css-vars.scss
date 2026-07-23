@@ -1,4 +1,6 @@
 :root {
+    // ** MAIN **
+
     // containers 
     --container-padding: 160px;
     --container-padding-mobile: 32px;
@@ -6,6 +8,12 @@
     // fonts 
     --font-family-main: 'Inter', sans-serif;
     --font-family-headline: 'Poppins', sans-serif;
+
+    // font-weight
+    --font-weight-main: 400;
+    --font-weight-headline: 500;
+    --font-weight-secondary: 600;
+    --font-weight-accent: 700;
 
     // colors-main
     --text-color-main: #000000;
@@ -35,15 +43,144 @@
     // animation
     --transition: all ease-in 0.2s;
     --transform: scale(1.1);
-    --animation-time: 300;
 
-    // button
-    --font-weight-button: 500;
-    --height-button-s: 40px;
-    --padding-button-s: 40px;
-    --height-button-m: 52px;
-    --padding-button-m: 52px;
+    // icons
+    --icon-size-main: 24px;
+    --icon-size-secondary: 20px;
+    --icon-size-main-mobile: 16px;
 
     // link
     --link-opacity: 0.6;
+
+    // spacing
+    --gap-main: 24px;
+    --gap-main-mobile: 16px;
+    
+    // ** TYPOGHAPHY **
+
+    // headlines
+    --headline_1_font-family: var(--font-family-headline);
+    --headline_1_font-weight: var(--font-weight-headline);
+    --headline_1_font-size: 80px;
+    --headline_1_line-height: 1.05;
+    --headline_1_letter-spacing: -0.0375em;
+
+    --headline_2_font-family: var(--font-family-headline);
+    --headline_2_font-weight: var(--font-weight-headline);
+    --headline_2_font-size: 72px;
+    --headline_2_line-height: 1.06;
+    --headline_2_letter-spacing: -0.02777778em;
+
+    --headline_3_font-family: var(--font-family-headline);
+    --headline_3_font-weight: var(--font-weight-headline);
+    --headline_3_font-size: 54px;
+    --headline_3_line-height: 1.07;
+    --headline_3_letter-spacing: -0.0185185em;
+
+    --headline_4_font-family: var(--font-family-headline);
+    --headline_4_font-weight: var(--font-weight-headline);
+    --headline_4_font-size: 40px;
+    --headline_4_line-height: 1.1;
+    --headline_4_letter-spacing: -0.01em;
+
+    --headline_5_font-family: var(--font-family-headline);
+    --headline_5_font-weight: var(--font-weight-headline);
+    --headline_5_font-size: 34px;
+    --headline_5_line-height: 1.12;
+    --headline_5_letter-spacing: -0.017647em;
+
+    --headline_6_font-family: var(--font-family-headline);
+    --headline_6_font-weight: var(--font-weight-headline);
+    --headline_6_font-size: 28px;
+    --headline_6_line-height: 1.21;
+    --headline_6_letter-spacing: -0.02142857em;
+
+    // texts
+    --text_1_font-family: var(--font-family-main);
+    --text_1_font-weight-1: var(--font-weight-main);
+    --text_1_font-weight-2: var(--font-weight-secondary);
+    --text_1_font-weight-3: var(--font-weight-accent);
+    --text_1_font-size: 26px;
+    --text_1_line-height: 1.54;
+    --text_1_color: var(--text-color-main-accent);
+
+    --text_2_font-family: var(--font-family-main);
+    --text_2_font-weight-1: var(--font-weight-main);
+    --text_2_font-weight-2: var(--font-weight-secondary);
+    --text_2_font-weight-3: var(--font-weight-accent);
+    --text_2_font-size: 22px;
+    --text_2_line-height: 1.55;
+    --text_2_color: var(--text-color-main-accent);
+
+    --body_1_font-family: var(--font-family-main);
+    --body_1_font-weight-1: var(--font-weight-main);
+    --body_1_font-weight-2: var(--font-weight-secondary);
+    --body_1_font-weight-3: var(--font-weight-accent);
+    --body_1_font-size: 20px;
+    --body_1_line-height: 1.6;
+    --body_1_color: var(--text-color-main-accent);
+
+    --text_3_font-family: var(--font-family-main);
+    --text_3_font-weight-1: var(--font-weight-main);
+    --text_3_font-weight-2: var(--font-weight-secondary);
+    --text_3_font-weight-3: var(--font-weight-accent);
+    --text_3_font-size: 18px;
+    --text_3_line-height: 1.67;
+    --text_3_color: var(--text-color-main-accent);
+
+    --body_2_font-family: var(--font-family-main);
+    --body_2_font-weight-1: var(--font-weight-main);
+    --body_2_font-weight-2: var(--font-weight-secondary);
+    --body_2_font-weight-3: var(--font-weight-accent);
+    --body_2_font-size: 16px;
+    --body_2_line-height: 1.62;
+    --body_2_color: var(--text-color-main-accent);
+
+    --caption_1_font-family: var(--font-family-main);
+    --caption_1_font-weight-1: var(--font-weight-main);
+    --caption_1_font-weight-2: var(--font-weight-secondary);
+    --caption_1_font-weight-3: var(--font-weight-accent);
+    --caption_1_font-size: 14px;
+    --caption_1_line-height: 1.57;
+    --caption_1_color: var(--text-color-main-accent);
+
+    --caption_2_font-family: var(--font-family-main);
+    --caption_2_font-weight-1: var(--font-weight-main);
+    --caption_2_font-weight-2: var(--font-weight-secondary);
+    --caption_2_font-weight-3: var(--font-weight-accent);
+    --caption_2_font-size: 12px;
+    --caption_2_line-height: 1.67;
+    --caption_2_color: var(--text-color-main-accent);
+
+    // buttons
+
+    --button-xl-font-family: var(--font-family-main);
+    --button-xl-font-weight: var(--font-weight-button);
+    --button-xl-font-size: 26px;
+    --button-xl-line-height: 1.46;
+    --button-xl-letter-spacing: 0em;
+
+    --button-l-font-family: var(--font-family-main);
+    --button-l-font-weight: var(--font-weight-button);
+    --button-l-font-size: 22px;
+    --button-l-line-height: 1.55;
+    --button-l-letter-spacing: 0em;
+
+    --button-m-font-family: var(--font-family-main);
+    --button-m-font-weight: var(--font-weight-button);
+    --button-m-font-size: 18px;
+    --button-m-line-height: 1.78;
+    --button-m-letter-spacing: -0.0222222222em;
+
+    --button-s-font-family: var(--font-family-main);
+    --button-s-font-weight: var(--font-weight-button);
+    --button-s-font-size: 16px;
+    --button-s-line-height: 1.75;
+    --button-s-letter-spacing: -0.025em;
+
+    --button-xs-font-family: var(--font-family-main);
+    --button-xs-font-weight: var(--font-weight-button);
+    --button-xs-font-size: 14px;
+    --button-xs-line-height: 1.71;
+    --button-xs-letter-spacing: 0em;
 }

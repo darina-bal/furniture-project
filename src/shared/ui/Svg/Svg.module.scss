@@ -1,6 +1,6 @@
 .icon {
-  width: 24px;
-  height: 24px;
+  width: var(--icon-size-main);
+  height: var(--icon-size-main);
 
   &.stroke {
     fill: none;

@@ -1,3 +1,6 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
 .notificationBar {
   height: 40px;
   background-color: var(--neutral-color-02);
@@ -5,33 +8,94 @@
   display: flex;
   align-items: center;
 
+  overflow: hidden;
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(height, 36px)
+  }
+
   .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
 
-    .link {
-      font-size: 14px;
-      line-height: 1.7143;
-      color: var(--secondary-color-1);
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, 22px)
+    }
 
-      &::before {
-        background-color: var(--secondary-color-1);
+    .textWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(gap, 8px)
       }
 
-      svg {
-        stroke: var(--secondary-color-1);
+      .iconTicketPercent {
+        @media (max-width: $mobile-size) {
+          @include fluid-property(width, var(--icon-size-main-mobile));
+          @include fluid-property(height, var(--icon-size-main-mobile));
+        }
+      }
+
+      .title {
+        font-family: var(--caption_1_font-family);
+        font-weight: var(--caption_1_font-weight-2);
+        font-size: var(--caption_1_font-size);
+        line-height: var(--caption_1_line-height);
+        color: var(--caption_1_color);
+  
+        @media (max-width: $mobile-size) {
+          @include fluid-property(font-size, var(--caption_2_font-size));
+          line-height: var(--caption_2_line-height);
+        }
+      }
+  
+      .link {
+        font-family: var(--button-xs-font-family);
+        font-weight: var(--button-xs-font-weight);
+        font-size: var(--button-xs-font-size);
+        line-height: var(--button-xs-line-height);
+        letter-spacing: var(--button-xs-letter-spacing);
+        color: var(--secondary-color-1);
+  
+        @media (max-width: $mobile-size) {
+          display: none;
+        }
+  
+        &::before {
+          background-color: var(--secondary-color-1);
+        }
+  
+        svg {
+          stroke: var(--secondary-color-1);
+        }
       }
     }
   }
 
   .crossButton {
-    margin-right: 16px;
+    position: fixed;
+    right: 16px;
+    top: 10px;
+
+    @media (max-width: $mobile-size) {
+      position: relative;
+      right: 0;
+      top: 0;
+    }
 
     .cross {
-      width: 20px;
-      height: 20px;
+      width: var(--icon-size-secondary);
+      height: var(--icon-size-secondary);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--icon-size-main-mobile));
+        @include fluid-property(height, var(--icon-size-main-mobile));
+      }
     }
   }
 }

@@ -4,13 +4,11 @@ import styles from './Button.module.scss'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   isDisabled?: boolean;
   variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost';
-  size?: 'xl' | 'l' | 'm' | 's' | 'xs';
 }
 
 const Button = (props: ButtonProps) => {
   const {
     variant = 'primary',
-    size = 'xs',
     type = 'button',
     children,
     isDisabled = false,
@@ -21,7 +19,6 @@ const Button = (props: ButtonProps) => {
   const classNames = [
     styles.button,
     styles[variant],
-    styles[`button_${size}`],
     className
   ].filter(Boolean).join(' ')
 

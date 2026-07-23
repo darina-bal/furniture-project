@@ -18,16 +18,3 @@
 @mixin fluid-property($property, $val) {
   #{$property}: calc($val / $const_mobile_px * 100 * 1vw);
 }
-
-// Подключение карты стилей для текста
-@mixin text-style($style-name) {
-  $style: map.get($typography, $style-name);
-  
-  @if $style == null {
-    @error "Стиль '#{$style-name}' не найден в карте $typography.";
-  }
-  
-  @each $property, $value in $style {
-    #{$property}: $value;
-  }
-}

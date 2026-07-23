@@ -22,7 +22,7 @@ export const deleteComponent = (
       }
     ],
     {
-      duration: Number(getComputedStyle(element).getPropertyValue('--animation-time')),
+      duration: 400,
       easing: 'ease-in-out',
       fill: 'forwards' 
     }

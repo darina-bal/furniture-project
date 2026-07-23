@@ -20,7 +20,6 @@ const Heading = (props: HeadingProps) => {
 
   const classNames = [
     styles.heading,
-    styles[level],
     className
   ].filter(Boolean).join(' ')
 
