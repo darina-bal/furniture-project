@@ -1,11 +1,22 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
 .cartWrapper {
-  // display: inline-flex;
-  // justify-content: center;
-  // align-items: center;
   gap: 5px;
 
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, 5px);
+  }
+
+  .shoppingBag {
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, var(--icon-size-main));
+      @include fluid-property(height, var(--icon-size-main));
+    }
+  }
+
   .count {
-    padding: 5px 6px;
+    padding: 5px;
     color: var(--neutral-color-01);
     background-color: var(--neutral-color-07);
     border-radius: var(--brs-4);
@@ -13,5 +24,11 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 0.83;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(padding, 5px);
+      @include fluid-property(font-size, 12px);
+      @include fluid-property(border-radius, var(--brs-4));
+    }
   }
 }

@@ -1,0 +1,20 @@
+@use '../../lib/styles/mixins.scss' as *;
+@use '../../lib/styles/scss-vars.scss' as*;
+
+.navbar {
+  display: flex;
+  gap: 40px;
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, 32px)
+  }
+
+  &.horizontal {
+    align-items: center;
+  }
+
+  &.vertical {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
