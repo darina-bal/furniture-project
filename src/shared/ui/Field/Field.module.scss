@@ -1,0 +1,80 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.field {
+  position: relative;
+
+  &:has(.input:not(:placeholder-shown)) .label {
+    color: var(--neutral-color-07);
+    scale: 0.9;
+    translate: -2.75em -3.2em;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 50%;   
+  left: 56px;
+  color: var(--neutral-color-04);
+  translate: 0 -50%;
+  pointer-events: none;
+  transition: var(--transition);
+
+  font-family: var(--caption_1_font-family);
+  font-weight: var(--caption_1_font-weight-1);
+  font-size: var(--caption_1_font-size);
+  line-height: var(--caption_1_line-height);
+}
+
+.input {
+  width: 100%;
+  height: var(--input-height-main);
+  padding-inline: var(--fieldInputPaddingX);
+  background-color: transparent;
+  border: var(--border-main);
+  border-radius: var(--brs-1);
+  color: var(--neutral-color-07);
+
+  transition: var(--transition);
+
+  font-family: var(--caption_1_font-family);
+  font-weight: var(--caption_1_font-weight-1);
+  font-size: var(--caption_1_font-size);
+  line-height: var(--caption_1_line-height);
+
+  &:hover,
+  &:focus {
+    border-color: var(--secondary-color-1);
+  }
+
+  &:focus {
+    background-color: var(--neutral-color-02);
+    outline: none;
+  }
+
+  &[type="search"] {
+    &:placeholder-shown {
+      padding-left: calc(var(--fieldInputPaddingX) * 2 + var(--icon-size-main));
+      background-image: url('/icons/search.svg');
+      background-position: var(--fieldInputPaddingX) 50%;
+      background-size: var(--icon-size-main);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.isInvalid {
+    border-color: red;
+  }
+}
+
+.error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 12px;
+  color: red;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}

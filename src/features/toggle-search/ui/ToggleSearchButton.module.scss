@@ -1,0 +1,8 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.buttonIconSearch {
+  @media (max-width: $mobile-size) {
+    display: none;
+  }
+}

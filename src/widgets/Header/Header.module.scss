@@ -52,18 +52,6 @@
       @media (max-width: $tablet-size) {
         gap: 8px;
       }
-
-      .buttonIconSearch {
-        @media (max-width: $mobile-size) {
-          display: none;
-        }
-      }
-
-      .buttonIconUserCircle {
-        @media (max-width: $mobile-size) {
-          display: none;
-        }
-      }
     }
   }
 }

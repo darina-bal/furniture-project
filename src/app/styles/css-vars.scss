@@ -38,6 +38,7 @@
     --brs-2: 80px;
     --brs-3: 50%;
     --brs-4: 10px;
+    --brs-main-mobile: 6px;
     --border-main: 1px solid var(--neutral-color-07);
 
     // animation
@@ -55,6 +56,16 @@
     // spacing
     --gap-main: 24px;
     --gap-main-mobile: 16px;
+
+    // field
+    --input-height-main: 52px;
+    --input-height-main-mobile: 46px;
+    --fieldInputPaddingX: 16px;
+
+    // modal
+    --bgc-overlay: rgba(0, 0, 0, 0.32);
+    --bgc-panel: #FFFFFF;
+    --transition-panel: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     
     // ** TYPOGHAPHY **
 

@@ -1,0 +1,50 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bgc-overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.overlayVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 413px;
+  background-color: var(--bgc-panel);
+  z-index: 1001;
+  transition: var(--transition-panel);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(width, 343px);
+    @include fluid-property(padding, 24px);
+  }
+}
+
+.left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.right {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.panelVisible {
+  transform: translateX(0);
+}

@@ -1,10 +1,12 @@
 import Container from '@/shared/ui/Container'
 import Logo from '@/shared/ui/Logo'
 import Navbar from '@/shared/ui/Navbar'
-import Svg from '@/shared/ui/Svg';
+import Svg from '@/shared/ui/Svg'
+import Button from '@/shared/ui/Button'
+import { ToggleCartButton } from '@/features/toggle-cart'
+import { ToggleAccountButton } from '@/features/toggle-account'
 import styles from './Header.module.scss'
-import Button from '@/shared/ui/Button';
-import CartButton from '@/entities/cart/ui/CartButton';
+import { ToggleSearchButton } from '@/features/toggle-search'
 
 const headerNavItems = [
   { label: 'Home', href: '/' },
@@ -34,23 +36,9 @@ const Header = () => {
           items={headerNavItems}
           className={styles.navbar} />
         <div className={styles.iconWrapper}>
-          <Button 
-            variant='ghost'
-            className={styles.buttonIconSearch}
-          >
-            <Svg 
-              iconName='search'
-              spriteType='mono' />
-          </Button>
-          <Button 
-            variant='ghost'
-            className={styles.buttonIconUserCircle}
-          >
-            <Svg 
-              iconName='user-circle'
-              spriteType='mono' />
-          </Button>
-          <CartButton />
+          <ToggleSearchButton />
+          <ToggleAccountButton />
+          <ToggleCartButton />
         </div>
       </Container>
     </header>

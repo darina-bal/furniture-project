@@ -1,0 +1,26 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.header {
+  height: 30px;
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(height, 24px);
+    @include fluid-property(margin-bottom, 16px);
+  }
+
+  .cross {
+    width: var(--icon-size-main);
+    height: var(--icon-size-main);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, var(--icon-size-main));
+      @include fluid-property(height, var(--icon-size-main));
+    }
+  }
+}
