@@ -9,7 +9,7 @@ import Svg from '../Svg'
 import styles from './RouterLink.module.scss'
 
 type RouterLinkProps = 
-  | ({ linkType?: 'link' } & LinkProps)
+  | ({ linkType?: 'link'; variant?: 'primary' | 'secondary' } & LinkProps)
   | ({ linkType: 'navlink' } & NavLinkProps)
 
 const RouterLink = (props: RouterLinkProps) => {
@@ -51,21 +51,24 @@ const RouterLink = (props: RouterLinkProps) => {
     linkType = 'link',
     children,
     className,
+    variant = 'primary',
     ...rest
   } = props 
 
   const resolvedClassName = [
     styles.link,
+    styles[variant],
     className
   ].filter(Boolean).join(' ')
 
   return (
     <Link className={resolvedClassName} {...rest}>
       {children}
+      {variant == 'primary' &&
       <Svg 
         iconName='arrow-right'
         spriteType='mono'
-        className={styles.arrowRight}/>
+        className={styles.arrowRight}/>}
     </Link>
   )
 }

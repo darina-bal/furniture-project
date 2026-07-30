@@ -1,26 +1,168 @@
 @use '@/shared/lib/styles/mixins' as *;
 @use '@/shared/lib/styles/scss-vars' as *;
 
-.header {
-  height: 30px;
-  margin-bottom: 16px;
-
+.panel {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 
-  @media (max-width: $mobile-size) {
-    @include fluid-property(height, 24px);
-    @include fluid-property(margin-bottom, 16px);
-  }
-
-  .cross {
-    width: var(--icon-size-main);
-    height: var(--icon-size-main);
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-main-mobile);
 
     @media (max-width: $mobile-size) {
-      @include fluid-property(width, var(--icon-size-main));
-      @include fluid-property(height, var(--icon-size-main));
+      @include fluid-property(gap, var(--gap-main-mobile));
+    }
+
+    .header {
+      height: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(height, 24px);
+      }
+
+      .cross {
+        width: var(--icon-size-main);
+        height: var(--icon-size-main);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(width, var(--icon-size-main));
+          @include fluid-property(height, var(--icon-size-main));
+        }
+      }
+    }
+
+    .accordion {
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-border-bottom);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(gap, var(--padding-border-bottom));
+        }
+      
+        .link {
+          font-family: var(--button-xs-font-family);
+          font-weight: var(--button-xs-font-weight);
+          font-size: var(--button-xs-font-size);
+          line-height: var(--button-xs-line-height);
+          letter-spacing: var(--button-xs-letter-spacing);
+
+          @media (max-width: $mobile-size) {
+            @include fluid-property(font-family, var(--button-xs-font-family));
+            @include fluid-property(font-weight, var(--button-xs-font-weight));
+            @include fluid-property(font-size, var(--button-xs-font-size));
+            @include fluid-property(line-height, var(--button-xs-line-height));
+            @include fluid-property(letter-spacing, var(--button-xs-letter-spacing));
+          }
+        }
+      }
+    }
+
+    .secondaryLink, .mainLink {
+      color: var(--neutral-color-07);
+
+      padding-bottom: var(--gap-main-mobile);
+      border-bottom: var(--border-bottom-main);
+
+      font-family: var(--button-xs-font-family);
+      font-weight: var(--button-xs-font-weight);
+      font-size: var(--button-xs-font-size);
+      line-height: var(--button-xs-line-height);
+      letter-spacing: var(--button-xs-letter-spacing);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(padding-bottom, var(--gap-main-mobile));
+        @include fluid-property(font-family, var(--button-xs-font-family));
+        @include fluid-property(font-weight, var(--button-xs-font-weight));
+        @include fluid-property(font-size, var(--button-xs-font-size));
+        @include fluid-property(line-height, var(--button-xs-line-height));
+        @include fluid-property(letter-spacing, var(--button-xs-letter-spacing));
+      }
+    } 
+
+    .secondaryLink {
+      margin-bottom: var(--margin-bottom-main-mobile);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(margin-bottom, var(--margin-bottom-main-mobile));
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-window);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, var(--margin-bottom-secondary-mobile));
+    }
+
+    .bottomWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-main-mobile);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(gap, var(--gap-main-mobile));
+      }
+      
+      .cartWrapper, .wishlistWrapper {
+        padding-bottom: var(--padding-border-bottom);
+        border-bottom: var(--border-bottom-main);
+  
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+  
+        font-family: var(--button-m-font-family);
+        font-weight: var(--button-m-font-weight);
+        font-size: var(--button-m-font-size);
+        line-height: var(--button-m-line-height);
+        letter-spacing: var(--button-m-letter-spacing);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(padding-bottom, var(--padding-border-bottom));
+          @include fluid-property(font-family, var(--button-m-font-family));
+          @include fluid-property(font-weight, var(--button-m-font-weight));
+          @include fluid-property(font-size, var(--button-m-font-size));
+          @include fluid-property(line-height, var(--button-m-line-height));
+          @include fluid-property(letter-spacing, var(--button-m-letter-spacing));
+        }
+      }
+    }
+
+    .buttonLogin {
+      width: 100%;
+      height: var(--button-height-main);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(height, var(--button-height-main));
+      }
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-main);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(gap, var(--gap-main));
+      }
+
+      .iconFooterInst, .iconFooterFace, .iconFooterYout {
+        @media (max-width: $mobile-size) {
+          @include fluid-property(width, var(--icon-size-main));
+          @include fluid-property(height, var(--icon-size-main));
+        }
+      }
     }
   }
 }

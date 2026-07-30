@@ -1,28 +1,27 @@
-import { useFlyout } from '@/shared/lib/hooks/useFlyout'
 import Button from '@/shared/ui/Button'
 import Svg from '@/shared/ui/Svg'
-import styles from './ToggleCartButton.module.scss'
+import styles from './WishlistButton.module.scss'
 
-interface CartButtonProps {
+interface WishlistButtonProps {
   count?: string;
 }
 
-export const ToggleCartButton = (props: CartButtonProps) => {
+export const WishlistButton = (props: WishlistButtonProps) => {
   const { count = 10 } = props
-
-  const { openCart } = useFlyout()
 
   return (
     <Button 
       variant='ghost'
       className={styles.wrapper}
-      onClick={openCart}
     >
       <Svg 
-        iconName='shopping-bag'
+        iconName='heart'
+        variant='fill'
         spriteType='mono'
-        className={styles.shoppingBag} />
+        className={styles.heart} />
       {(Number(count) > 0) && <span className={styles.count}>{count}</span>}
     </Button>
   )
 }
+
+export default WishlistButton

@@ -1,0 +1,86 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.accordion {
+  border-bottom: var(--border-bottom-main);
+  padding-bottom: var(--gap-main-mobile);
+
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-touch-callout: none;
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(padding-bottom, var(--gap-main-mobile));
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: var(--button-xs-font-family);
+    font-weight: var(--button-xs-font-weight);
+    font-size: var(--button-xs-font-size);
+    line-height: var(--button-xs-line-height);
+    letter-spacing: var(--button-xs-letter-spacing);
+    transform: scale(1);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        opacity: var(--link-opacity);
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        opacity: var(--link-opacity);
+      }
+    }
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(font-family, var(--button-xs-font-family));
+      @include fluid-property(font-weight, var(--button-xs-font-weight));
+      @include fluid-property(font-size, var(--button-xs-font-size));
+      @include fluid-property(line-height, var(--button-xs-line-height));
+      @include fluid-property(letter-spacing, var(--button-xs-letter-spacing));
+    }
+
+    .icon {
+      transition: var(--transition);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--icon-size-main));
+        @include fluid-property(height, var(--icon-size-main));
+      }
+
+      &.iconOpen {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: var(--transition);
+
+    &.contentOpen {
+      max-height: 500px;
+      opacity: 1;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(max-height, 500px);
+      }
+    }
+
+    .contentInner {
+      padding: var(--padding-border-bottom);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(padding, var(--padding-border-bottom));
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 .link {
   color: var(--neutral-color-07);
 
-  font-family: var(--font-family-main);
-  font-weight: var(--font-weight-button);
-  font-size: 16px;
-  line-height: 1.75;
-  letter-spacing: -0.025em;
+  font-family: var(--button-s-font-family);
+  font-weight: var(--button-s-font-weight);
+  font-size: var(--button-s-font-size);
+  line-height: var(--button-s-line-height);
+  letter-spacing: var(--button-s-letter-spacing);
 
   display: inline-flex;
   justify-content: center;
@@ -19,50 +19,66 @@
   user-select: none;
   -webkit-touch-callout: none;
 
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      opacity: var(--link-opacity);
-    }
-  }
-
-  @media (hover: none) and (pointer: coarse) {
-    &:active {
-      opacity: var(--link-opacity);
-    }
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    background-color: var(--neutral-color-07);
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    transition: var(--transition);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      &::before{
+  &.primary {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
         opacity: var(--link-opacity);
       }
     }
-  }
 
-  @media (hover: none) and (pointer: coarse) {
-    &:active {
-      &::before{
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
         opacity: var(--link-opacity);
       }
     }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background-color: var(--neutral-color-07);
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      transition: var(--transition);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        &::before{
+          opacity: var(--link-opacity);
+        }
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        &::before{
+          opacity: var(--link-opacity);
+        }
+      }
+    }
+
+    .arrowRight {
+      width: 20px;
+      height: 20px;
+
+      margin-left: 4px;
+    }
   }
 
-  .arrowRight {
-    width: 20px;
-    height: 20px;
+  &.secondary {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--neutral-color-01);
+      }
+    }
 
-    margin-left: 4px;
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        color: var(--neutral-color-01);
+      }
+    }
   }
 }
 
@@ -73,6 +89,8 @@
   font-weight: var(--font-weight-button);
   font-size: 14px;
   line-height: 1.71;
+
+  transition: var(--transition);
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {

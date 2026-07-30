@@ -24,6 +24,14 @@
   font-weight: var(--caption_1_font-weight-1);
   font-size: var(--caption_1_font-size);
   line-height: var(--caption_1_line-height);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(font-family, var(--caption_1_font-family));
+    @include fluid-property(font-weight, var(--caption_1_font-weight-1));
+    @include fluid-property(font-size, var(--caption_1_font-size));
+    @include fluid-property(line-height, var(--caption_1_line-height));
+    @include fluid-property(left, 56px);
+  }
 }
 
 .input {
@@ -42,6 +50,15 @@
   font-size: var(--caption_1_font-size);
   line-height: var(--caption_1_line-height);
 
+  @media (max-width: $mobile-size) {
+    @include fluid-property(font-family, var(--caption_1_font-family));
+    @include fluid-property(font-weight, var(--caption_1_font-weight-1));
+    @include fluid-property(font-size, var(--caption_1_font-size));
+    @include fluid-property(line-height, var(--caption_1_line-height));
+    @include fluid-property(height, var(--input-height-main));
+    @include fluid-property(padding-inline, var(--fieldInputPaddingX));
+  }
+
   &:hover,
   &:focus {
     border-color: var(--secondary-color-1);
@@ -59,6 +76,11 @@
       background-position: var(--fieldInputPaddingX) 50%;
       background-size: var(--icon-size-main);
       background-repeat: no-repeat;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(padding-left, calc(var(--fieldInputPaddingX) * 2 + var(--icon-size-main)));
+        @include fluid-property(background-size, var(--icon-size-main));
+      }
     }
   }
 
