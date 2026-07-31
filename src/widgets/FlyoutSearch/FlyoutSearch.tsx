@@ -10,6 +10,29 @@ import { ToggleCartButton } from '@/features/toggle-cart'
 import styles from './FlyoutSearch.module.scss'
 import WishlistButton from '@/entities/wishlist'
 
+// Массивы данных для циклов
+const shopLinks = [
+  { title: 'All Rooms', to: 'shop' },
+  { title: 'Living Room', to: 'shop/livingroom' },
+  { title: 'Bedroom', to: 'shop/bedroom' },
+  { title: 'Kitchen', to: 'shop/kitchen' },
+  { title: 'Bathroom', to: 'shop/bathroom' },
+  { title: 'Dining', to: 'shop/dining' },
+  { title: 'Outdoor', to: 'shop/outdoor' },
+]
+
+const productLinks = [
+  { title: 'Sofa', to: 'shop/sofa' },
+  { title: 'Lamp', to: 'shop/lamp' },
+  { title: 'Table', to: 'shop/table' },
+]
+
+const socialLinks = [
+  { iconName: 'instagram', to: 'https://www.instagram.com/', className: styles.iconFooterInst },
+  { iconName: 'facebook', to: 'https://www.facebook.com/', className: styles.iconFooterFace }, 
+  { iconName: 'youtube', to: 'https://www.youtube.com/', className: styles.iconFooterYout },
+]
+
 const FlyoutSearch = () => {
   const { closeSearch } = useFlyout()
   const isOpen = useFlyoutStore((s) => s.isOpen('search'))
@@ -48,40 +71,24 @@ const FlyoutSearch = () => {
         >Home</RouterLink>
         <Accordion title="Shop" className={styles.accordion}>
           <ul className={styles.list}>
-            <li>
-              <RouterLink linkType='link' to='shop' className={styles.link}>All Rooms</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='shop/livingroom' className={styles.link}>Living Room</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='shop/bedroom' className={styles.link}>Bedroom</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='shop/kitchen' className={styles.link}>Kitchen</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='shop/bathroom' className={styles.link}>Bathroom</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='shop/dining' className={styles.link}>Dining</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='shop/outdoor' className={styles.link}>Outdoor</RouterLink>
-            </li>
+            {shopLinks.map((link) => (
+              <li key={link.to}>
+                <RouterLink linkType='link' to={link.to} className={styles.link}>
+                  {link.title}
+                </RouterLink>
+              </li>
+            ))}
           </ul>
         </Accordion>
         <Accordion title="Product" className={styles.accordion}>
           <ul className={styles.list}>
-            <li>
-              <RouterLink linkType='link' to='/shop/sofa' className={styles.link}>Sofa</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='/shop/lamp' className={styles.link}>Lamp</RouterLink>
-            </li>
-            <li>
-              <RouterLink linkType='link' to='/shop/table' className={styles.link}>Table</RouterLink>
-            </li>
+            {productLinks.map((link) => (
+              <li key={link.to}>
+                <RouterLink linkType='link' to={link.to} className={styles.link}>
+                  {link.title}
+                </RouterLink>
+              </li>
+            ))}
           </ul>
         </Accordion>
         <RouterLink 
@@ -116,39 +123,17 @@ const FlyoutSearch = () => {
           <Button className={styles.buttonLogin}>Sign In</Button>
         </RouterLink>
         <div className={styles.footer}>
-          <RouterLink
-            variant='secondary'
-            to='https://www.instagram.com/'
-          >
-            <Button variant='ghost'>
-              <Svg 
-                spriteType='mono'
-                iconName='instagram'
-                className={styles.iconFooterInst} />
-            </Button>
-          </RouterLink>
-          <RouterLink
-            variant='secondary'
-            to='https://www.instagram.com/'
-          >
-            <Button variant='ghost'>
-              <Svg 
-                spriteType='mono'
-                iconName='facebook'
-                className={styles.iconFooterFace} />
-            </Button>
-          </RouterLink>
-          <RouterLink
-            variant='secondary'
-            to='https://www.youtube.com/'
-          >
-            <Button variant='ghost'>
-              <Svg 
-                spriteType='mono'
-                iconName='youtube'
-                className={styles.iconFooterYout} />
-            </Button>
-          </RouterLink>
+          {socialLinks.map((social) => (
+            <RouterLink key={social.iconName} variant='secondary' to={social.to}>
+              <Button variant='ghost'>
+                <Svg
+                  spriteType='mono'
+                  iconName={social.iconName}
+                  className={social.className}
+                />
+              </Button>
+            </RouterLink>
+          ))}
         </div>
       </div>
     </FlyoutPanel>
