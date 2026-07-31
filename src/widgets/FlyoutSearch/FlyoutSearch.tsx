@@ -6,9 +6,10 @@ import Svg from '@/shared/ui/Svg'
 import Field from '@/shared/ui/Field'
 import Accordion from '@/shared/ui/Accordion'
 import RouterLink from '@/shared/ui/RouterLink'
+import WishlistButton from '@/entities/wishlist'
+import { useUser } from '@/entities/user'
 import { ToggleCartButton } from '@/features/toggle-cart'
 import styles from './FlyoutSearch.module.scss'
-import WishlistButton from '@/entities/wishlist'
 
 // Массивы данных для циклов
 const shopLinks = [
@@ -35,6 +36,7 @@ const socialLinks = [
 
 const FlyoutSearch = () => {
   const { closeSearch } = useFlyout()
+  const { user } = useUser();
   const isOpen = useFlyoutStore((s) => s.isOpen('search'))
 
   return (
@@ -116,12 +118,16 @@ const FlyoutSearch = () => {
             <WishlistButton />
           </RouterLink>
         </div>
-        <RouterLink 
-          to='login' 
-          variant='secondary'
-        >
-          <Button className={styles.buttonLogin}>Sign In</Button>
-        </RouterLink>
+        {user?.role === 'user' ? (
+          ''
+        ) : (
+          <RouterLink 
+            to='login' 
+            variant='secondary'
+          >
+            <Button className={styles.buttonLogin}>Sign In</Button>
+          </RouterLink>
+        )}
         <div className={styles.footer}>
           {socialLinks.map((social) => (
             <RouterLink key={social.iconName} variant='secondary' to={social.to}>

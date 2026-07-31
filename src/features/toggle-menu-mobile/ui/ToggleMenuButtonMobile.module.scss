@@ -1,0 +1,15 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.buttonIconMenu {
+  @media (min-width: ($mobile-size + 1)) {
+    display: none;
+  }
+
+  .iconMenu {
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, var(--icon-size-main));
+      @include fluid-property(height, var(--icon-size-main));
+    }
+  }
+}
