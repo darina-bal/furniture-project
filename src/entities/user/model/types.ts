@@ -4,6 +4,7 @@ export interface User {
   lastname: string;
   displayname: string;
   email: string;
-  avatarUrl?: string;
+  avatarUrlJpg?: string;
+  avatarUrlWebp?: string;
   role: 'user' | 'guest';
 }

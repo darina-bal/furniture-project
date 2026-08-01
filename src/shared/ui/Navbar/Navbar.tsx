@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router';
 import styles from './Navbar.module.scss'
 import RouterLink from '../RouterLink';
 

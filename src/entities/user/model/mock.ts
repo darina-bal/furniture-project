@@ -6,6 +6,7 @@ export const mockUser: User = {
   lastname: 'B',
   displayname: 'Kitty',
   email: 'DarB@example.com',
-  avatarUrl: 'img/cat-avatar.jpg',
+  avatarUrlJpg: 'img/cat-avatar.jpg',
+  avatarUrlWebp: 'img/cat-avatar.webp',
   role: 'user',
 }

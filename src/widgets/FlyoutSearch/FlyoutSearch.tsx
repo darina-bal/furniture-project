@@ -36,7 +36,7 @@ const socialLinks = [
 
 const FlyoutSearch = () => {
   const { closeSearch } = useFlyout()
-  const { user } = useUser();
+  const { user } = useUser()
   const isOpen = useFlyoutStore((s) => s.isOpen('search'))
 
   return (

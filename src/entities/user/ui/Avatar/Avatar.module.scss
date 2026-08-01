@@ -1,0 +1,80 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--padding-border-bottom);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--padding-border-bottom));
+  }
+
+  .wrapperAvatar {
+    position: relative;
+    
+    .avatar {
+      display: block;
+      width: var(--avatar-size);
+      height: var(--avatar-size);
+  
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--avatar-size));
+        @include fluid-property(height, var(--avatar-size));
+      }
+    
+      img {
+        border-radius: var(--brs-3);
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  
+    .iconWrapper {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+  
+      background-color: var(--neutral-color-07);
+      border-radius: var(--brs-3);
+      border: var(--border-secondary);
+      
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      
+      width: var(--edit-size);
+      height: var(--edit-size);
+  
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--edit-size));
+        @include fluid-property(height, var(--edit-size));
+      }
+  
+      .iconCamera {
+        fill: var(--neutral-color-01);
+  
+        width: var(--icon-size-main-mobile);
+        height: var(--icon-size-main-mobile);
+  
+        @media (max-width: $mobile-size) {
+          @include fluid-property(width, var(--icon-size-main-mobile));
+          @include fluid-property(height, var(--icon-size-main-mobile));
+        }
+      }
+    }
+  }
+
+  .userDisplayName {
+    font-family: var(--body_1_font-family);
+    font-weight: var(--body_1_font-weight-2);
+    font-size: var(--body_1_font-size);
+    line-height: var(--body_1_line-height);
+    color: var(--neutral-color-07);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(font-size, var(--body_1_font-size));
+    }
+  }
+}
