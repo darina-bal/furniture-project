@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import clsx from 'clsx'
 import styles from './FlyoutPanel.module.scss'
 
@@ -20,8 +20,6 @@ const FlyoutPanel = (props: FlyoutPanelProps) => {
     children,
     className,
   } = props
-
-  const panelRef = useRef<HTMLDivElement>(null)
 
   // Закрытие по Escape
   useEffect(() => {
@@ -52,7 +50,6 @@ const FlyoutPanel = (props: FlyoutPanelProps) => {
         onClick={onClose}
       />
       <div
-        ref={panelRef}
         className={clsx(
           styles.panel,
           styles[direction],

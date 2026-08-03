@@ -2,9 +2,11 @@ import Container from '@/shared/ui/Container'
 import Logo from '@/shared/ui/Logo'
 import Navbar from '@/shared/ui/Navbar'
 import { ToggleCartButton } from '@/features/toggle-cart'
-import { ToggleAccountButton } from '@/features/toggle-account'
 import { ToggleSearchButton } from '@/features/toggle-search'
 import { ToggleMenuButtonMobile } from '@/features/toggle-menu-mobile'
+import RouterLink from '@/shared/ui/RouterLink'
+import Button from '@/shared/ui/Button'
+import Svg from '@/shared/ui/Svg'
 import styles from './Header.module.scss'
 
 const headerNavItems = [
@@ -28,7 +30,16 @@ const Header = () => {
           className={styles.navbar} />
         <div className={styles.iconWrapper}>
           <ToggleSearchButton />
-          <ToggleAccountButton />
+          <RouterLink to='user' variant='secondary'>
+            <Button 
+              variant='ghost'
+              className={styles.wrapperIconUserCircle}
+            >
+              <Svg 
+                iconName='user-circle'
+                spriteType='mono' />
+            </Button>
+          </RouterLink>
           <ToggleCartButton />
         </div>
       </Container>

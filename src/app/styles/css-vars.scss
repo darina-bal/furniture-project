@@ -41,13 +41,18 @@
     --brs-main-mobile: 6px;
     --border-main: 1px solid var(--neutral-color-07);
     --border-secondary: 2px solid var(--neutral-color-01);
+    --border-tertiary: 2px solid var(--neutral-color-04);
+    --border-quaternary: 2px solid var(--neutral-color-02);
+    --border-accent: 2px solid var(--secondary-color-1);
     --border-bottom-main: 1px solid var(--neutral-color-03);
+    --box-shadow: 0 64px 64px -48px rgba(15, 15, 15, 0.1);
 
-    //button
+    // button
     --button-height-main: 52px;
 
     // animation
     --transition: all ease-in 0.2s;
+    --transition-accordeon: all ease-in-out 0.5s;
     --transform: scale(1.1);
 
     // icons
@@ -66,6 +71,7 @@
     --gap-main: 24px;
     --gap-main-mobile: 16px;
     --gap-window: 19px;
+    --gap-category: 12px;
     --padding-border-bottom: 8px;
     --margin-bottom-main: 80px;
     --margin-bottom-main-mobile: 40px;

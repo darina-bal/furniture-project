@@ -1,0 +1,73 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-main-mobile);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-main-mobile));
+  }
+
+  .title {
+    font-family: var(--body_2_font-family);
+    font-weight: var(--body_2_font-weight-2);
+    font-size: var(--body_2_font-size);
+    line-height: var(--body_2_line-height);
+    color: var(--neutral-color-07);
+    text-transform: uppercase;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(font-size, var(--body_2_font-size));
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-category);
+
+    .item {
+      font-family: var(--body_2_font-family);
+      font-weight: var(--body_2_font-weight-2);
+      font-size: var(--body_2_font-size);
+      line-height: var(--body_2_line-height);
+      color: var(--neutral-color-04);
+      cursor: pointer;
+      transition: var(--transition);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--body_2_font-size));
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--neutral-color-07);
+        }
+      }
+
+      @media (hover: none) and (pointer: coarse) {
+        &:active {
+          color: var(--neutral-color-07);
+        }
+      }
+
+      &.itemActive {
+        position: relative;
+        color: var(--neutral-color-07);
+
+        &::before {
+          content: '';
+          position: absolute;
+          height: 1px;
+          background-color: var(--neutral-color-07);
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          transition: var(--transition);
+        }
+      }
+    }
+  }
+}

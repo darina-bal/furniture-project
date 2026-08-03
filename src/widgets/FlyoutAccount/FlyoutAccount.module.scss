@@ -1,7 +1,0 @@
-@use '@/shared/lib/styles/mixins' as *;
-@use '@/shared/lib/styles/scss-vars' as *;
-
-.panel {
-  align-items: center;
-  gap: var(--margin-bottom-main-mobile);
-}

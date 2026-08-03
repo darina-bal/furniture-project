@@ -1,8 +1,0 @@
-@use '@/shared/lib/styles/mixins' as *;
-@use '@/shared/lib/styles/scss-vars' as *;
-
-.buttonIconUserCircle {
-  @media (max-width: $mobile-size) {
-    display: none;
-  }
-}

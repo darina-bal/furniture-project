@@ -94,4 +94,22 @@
       }
     }
   }
+
+  &.select {
+    border: var(--border-tertiary);
+    border-radius: var(--brs-1);
+    color: var(--neutral-color-07);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transform: none;
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        transform: none;
+      }
+    }
+  }
 }

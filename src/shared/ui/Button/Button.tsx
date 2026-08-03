@@ -3,7 +3,7 @@ import styles from './Button.module.scss'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   isDisabled?: boolean;
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'select';
 }
 
 const Button = (props: ButtonProps) => {

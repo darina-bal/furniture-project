@@ -1,0 +1,153 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-border-bottom);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--padding-border-bottom));
+  }
+
+  .title {
+    font-family: var(--body_2_font-family);
+    font-weight: var(--body_2_font-weight-2);
+    font-size: var(--body_2_font-size);
+    line-height: var(--body_2_line-height);
+    color: var(--neutral-color-04);
+    text-transform: uppercase;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(font-size, var(--body_2_font-size));
+    }
+  }
+
+  .trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--gap-category);
+    border: var(--border-tertiary);
+    border-radius: var(--brs-1);
+    transition: var(--transition);
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-touch-callout: none;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(padding, var(--gap-category));
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border: var(--border-accent);
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        border: var(--border-accent);
+      }
+    }
+
+    .placeholder {
+      font-family: var(--body_2_font-family);
+      font-weight: var(--body_2_font-weight-2);
+      font-size: var(--body_2_font-size);
+      line-height: var(--body_2_line-height);
+      color: var(--neutral-color-07);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--body_2_font-size));
+      }
+    }
+
+    .icon {
+      transition: var(--transition);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--icon-size-main));
+        @include fluid-property(height, var(--icon-size-main));
+      }
+
+      &.iconOpen {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + var(--padding-border-bottom));
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    pointer-events: none;
+    background-color: var(--neutral-color-01);
+    transition: var(--transition);
+
+    border: var(--border-quaternary);
+    border-radius: var(--brs-1);
+    padding: var(--padding-border-bottom);
+    box-shadow: var(--box-shadow);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(padding, var(--padding-border-bottom));
+    }
+
+    &.dropdownActive {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .option {
+      font-family: var(--body_2_font-family);
+      font-weight: var(--body_2_font-weight-1);
+      font-size: var(--body_2_font-size);
+      line-height: var(--body_2_line-height);
+      color: var(--neutral-color-04);
+
+      padding: var(--padding-border-bottom);
+      cursor: pointer;
+      transition: var(--transition);
+
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-touch-callout: none;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(padding, var(--padding-border-bottom));
+        @include fluid-property(font-size, var(--body_2_font-size));
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--neutral-color-07);
+          font-weight: var(--body_2_font-weight-2);
+          background-color: var(--neutral-color-02);
+          border-radius: var(--brs-1);
+        }
+      }
+
+      @media (hover: none) and (pointer: coarse) {
+        &:active {
+          color: var(--neutral-color-07);
+          font-weight: var(--body_2_font-weight-2);
+          background-color: var(--neutral-color-02);
+          border-radius: var(--brs-1);
+        }
+      }
+    }
+  }
+}

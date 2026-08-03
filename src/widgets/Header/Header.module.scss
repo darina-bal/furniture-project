@@ -39,6 +39,12 @@
       @media (max-width: $tablet-size) {
         gap: 8px;
       }
+
+      .wrapperIconUserCircle {
+        @media (max-width: $mobile-size) {
+          display: none;
+        }
+      }
     }
   }
 }
