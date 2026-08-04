@@ -1,0 +1,33 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.panel {
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-family: var(--headline_6_font-family);
+      font-weight: var(--headline_6_font-weight);
+      font-size: var(--headline_6_font-size);
+      line-height: var(--headline_6_line-height);
+      letter-spacing: var(--headline_6_letter-spacing);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--headline_6_font-size));
+      }
+    }
+
+    .cross {
+      width: var(--icon-size-main);
+      height: var(--icon-size-main);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--icon-size-main));
+        @include fluid-property(height, var(--icon-size-main));
+      }
+    }
+  }
+}

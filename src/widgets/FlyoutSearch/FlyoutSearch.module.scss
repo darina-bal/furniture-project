@@ -55,10 +55,7 @@
           letter-spacing: var(--button-xs-letter-spacing);
 
           @media (max-width: $mobile-size) {
-            @include fluid-property(font-family, var(--button-xs-font-family));
-            @include fluid-property(font-weight, var(--button-xs-font-weight));
             @include fluid-property(font-size, var(--button-xs-font-size));
-            @include fluid-property(line-height, var(--button-xs-line-height));
             @include fluid-property(letter-spacing, var(--button-xs-letter-spacing));
           }
         }
@@ -79,10 +76,7 @@
 
       @media (max-width: $mobile-size) {
         @include fluid-property(padding-bottom, var(--gap-main-mobile));
-        @include fluid-property(font-family, var(--button-xs-font-family));
-        @include fluid-property(font-weight, var(--button-xs-font-weight));
         @include fluid-property(font-size, var(--button-xs-font-size));
-        @include fluid-property(line-height, var(--button-xs-line-height));
         @include fluid-property(letter-spacing, var(--button-xs-letter-spacing));
       }
     } 
@@ -130,10 +124,7 @@
 
         @media (max-width: $mobile-size) {
           @include fluid-property(padding-bottom, var(--padding-border-bottom));
-          @include fluid-property(font-family, var(--button-m-font-family));
-          @include fluid-property(font-weight, var(--button-m-font-weight));
           @include fluid-property(font-size, var(--button-m-font-size));
-          @include fluid-property(line-height, var(--button-m-line-height));
           @include fluid-property(letter-spacing, var(--button-m-letter-spacing));
         }
       }
