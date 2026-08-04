@@ -1,6 +1,7 @@
 import Container from '@/shared/ui/Container'
 import Logo from '@/shared/ui/Logo'
 import Navbar from '@/shared/ui/Navbar'
+import { useUser } from '@/entities/user'
 import { ToggleCartButton } from '@/features/toggle-cart'
 import { ToggleSearchButton } from '@/features/toggle-search'
 import { ToggleMenuButtonMobile } from '@/features/toggle-menu-mobile'
@@ -17,6 +18,7 @@ const headerNavItems = [
 ];
 
 const Header = () => {
+  const { user } = useUser()
 
   return (
     <header className={styles.header}>
@@ -30,16 +32,29 @@ const Header = () => {
           className={styles.navbar} />
         <div className={styles.iconWrapper}>
           <ToggleSearchButton />
-          <RouterLink to='user' variant='secondary'>
-            <Button 
-              variant='ghost'
-              className={styles.wrapperIconUserCircle}
-            >
-              <Svg 
-                iconName='user-circle'
-                spriteType='mono' />
-            </Button>
-          </RouterLink>
+          {user?.role !== 'guest' ? (
+            <RouterLink to='user' variant='secondary'>
+              <Button 
+                variant='ghost'
+                className={styles.wrapperIconUserCircle}
+              >
+                <Svg 
+                  iconName='user-circle'
+                  spriteType='mono' />
+              </Button>
+            </RouterLink>
+          ) : (
+            <RouterLink to='auth' variant='secondary'>
+              <Button 
+                variant='ghost'
+                className={styles.wrapperIconUserCircle}
+              >
+                <Svg 
+                  iconName='user-circle'
+                  spriteType='mono' />
+              </Button>
+            </RouterLink>
+          )}
           <ToggleCartButton />
         </div>
       </Container>
