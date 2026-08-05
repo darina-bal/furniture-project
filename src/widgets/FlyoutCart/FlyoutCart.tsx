@@ -4,12 +4,16 @@ import { useUser } from '@/entities/user'
 import Heading from '@/shared/ui/Heading'
 import Button from '@/shared/ui/Button'
 import Svg from '@/shared/ui/Svg'
+import { CartList, useCartStore, selectCartItems } from '@/entities/cart'
+
 import styles from './FlyoutCart.module.scss'
 
 const FlyoutCart = () => {
   const { closeCart } = useFlyout()
   const { user } = useUser()
   const isOpen = useFlyoutStore((s) => s.isOpen('cart'))
+
+  const items = useCartStore(selectCartItems)
   
   return (
     <FlyoutPanel
@@ -32,6 +36,7 @@ const FlyoutCart = () => {
             className={styles.cross} />
         </Button>
       </div>
+      <CartList items={items} /> 
     </FlyoutPanel>
   )
 }

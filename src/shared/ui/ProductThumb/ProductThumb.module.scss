@@ -1,0 +1,12 @@
+.wrapper {
+  background-color: var(--neutral-color-02);
+
+  picture{
+    display: block;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

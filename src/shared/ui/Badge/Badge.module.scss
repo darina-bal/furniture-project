@@ -1,0 +1,31 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.badge {
+  display: inline-flex;
+  padding: 4px 14px;
+  border-radius: var(--brs-5);
+  font-family: var(--hairline_1_font-family);
+  font-weight: var(--hairline_1_font-weight);
+  font-size: var(--hairline_1_font-size);
+  line-height: var(--hairline_1_line-height);
+  letter-spacing: var(--hairline_1_letter-spacing);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(font-size, var(--hairline_1_font-size));
+    @include fluid-property(padding-top, 4px);
+    @include fluid-property(padding-bottom, 4px);
+    @include fluid-property(padding-right, 4px);
+    @include fluid-property(padding-left, 4px);
+  }
+
+  &.new {
+    background-color: var(--neutral-color-01);
+    color: var(--neutral-color-07);
+  }
+
+  &.discount {
+    background-color: var(--secondary-color-2);
+    color: var(--neutral-color-01);
+  }
+}

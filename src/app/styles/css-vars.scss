@@ -38,6 +38,7 @@
     --brs-2: 80px;
     --brs-3: 50%;
     --brs-4: 10px;
+    --brs-5: 4px;
     --brs-main-mobile: 6px;
     --border-main: 1px solid var(--neutral-color-07);
     --border-secondary: 2px solid var(--neutral-color-01);
@@ -125,6 +126,13 @@
     --headline_6_font-size: 28px;
     --headline_6_line-height: 1.21;
     --headline_6_letter-spacing: -0.02142857em;
+
+    // hairlines
+    --hairline_1_font-family: var(--font-family-main);
+    --hairline_1_font-weight: var(--font-weight-accent);
+    --hairline_1_font-size: 16px;
+    --hairline_1_line-height: 1;
+    --hairline_1_letter-spacing: 0em;
 
     // texts
     --text_1_font-family: var(--font-family-main);
