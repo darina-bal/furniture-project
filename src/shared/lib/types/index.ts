@@ -9,4 +9,5 @@ export interface Product {
   countStar: number;
   imageUrlPng: string;
   imageUrlWebp: string;
+  url: string;
 }

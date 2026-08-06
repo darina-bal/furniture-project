@@ -12,6 +12,7 @@ const Landing = () => {
             key={item.id}
             product={item}
             className={styles.productArrivalsCard}
+            link={item.url}
           />
         ))}
       </Container>

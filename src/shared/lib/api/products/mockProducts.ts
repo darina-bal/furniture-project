@@ -11,7 +11,8 @@ export const mockProducts: Product[] = [
     isNew: true,
     countStar: 5,
     imageUrlPng: '/img/tray-black.png', 
-    imageUrlWebp: '/img/tray-black.webp' 
+    imageUrlWebp: '/img/tray-black.webp',
+    url: 'product/tray-black',
   },
   { 
     id: 'tray-red', 
@@ -23,7 +24,8 @@ export const mockProducts: Product[] = [
     isNew: true,
     countStar: 5,
     imageUrlPng: '/img/tray-red.png', 
-    imageUrlWebp: '/img/tray-red.webp' 
+    imageUrlWebp: '/img/tray-red.webp',
+    url: 'product/tray-red',
   },
   { 
     id: 'lamp-gold', 
@@ -32,6 +34,7 @@ export const mockProducts: Product[] = [
     price: 39,
     countStar: 5,
     imageUrlPng: '/img/lamp-1.png', 
-    imageUrlWebp: '/img/lamp-1.webp' 
+    imageUrlWebp: '/img/lamp-1.webp',
+    url: 'product/lamp-gold',
   },
 ]
