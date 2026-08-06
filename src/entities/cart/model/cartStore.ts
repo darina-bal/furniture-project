@@ -2,7 +2,6 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { Product } from '@/shared/lib/types'
 import type { CartItem } from './types'
-import { mockItems } from './mock'
 
 interface CartState {
   items: CartItem[];
@@ -34,3 +33,6 @@ export const useCartStore = create<CartState>()(
 )
 
 export const selectCartItems = (s: CartState) => s.items
+
+export const selectTotalQuantity = (s: CartState) =>
+  s.items.reduce((sum, item) => sum + item.quantity, 0)

@@ -4,11 +4,11 @@ import Svg from '@/shared/ui/Svg'
 import styles from './ToggleCartButton.module.scss'
 
 interface CartButtonProps {
-  count?: string;
+  count: number;
 }
 
 export const ToggleCartButton = (props: CartButtonProps) => {
-  const { count = 10 } = props
+  const { count } = props
 
   const { openCart } = useFlyout()
 
@@ -22,7 +22,7 @@ export const ToggleCartButton = (props: CartButtonProps) => {
         iconName='shopping-bag'
         spriteType='mono'
         className={styles.shoppingBag} />
-      {(Number(count) > 0) && <span className={styles.count}>{count}</span>}
+      {(count > 0) && <span className={styles.count}>{count}</span>}
     </Button>
   )
 }

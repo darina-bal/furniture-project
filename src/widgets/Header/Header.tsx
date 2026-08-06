@@ -8,6 +8,7 @@ import { ToggleMenuButtonMobile } from '@/features/toggle-menu-mobile'
 import RouterLink from '@/shared/ui/RouterLink'
 import Button from '@/shared/ui/Button'
 import Svg from '@/shared/ui/Svg'
+import { selectTotalQuantity, useCartStore } from '@/entities/cart'
 import styles from './Header.module.scss'
 
 const headerNavItems = [
@@ -19,6 +20,7 @@ const headerNavItems = [
 
 const Header = () => {
   const { user } = useUser()
+  const totalQuantity = useCartStore(selectTotalQuantity)
 
   return (
     <header className={styles.header}>
@@ -55,7 +57,7 @@ const Header = () => {
               </Button>
             </RouterLink>
           )}
-          <ToggleCartButton />
+          <ToggleCartButton count={totalQuantity} />
         </div>
       </Container>
     </header>
