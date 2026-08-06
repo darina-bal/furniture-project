@@ -33,7 +33,10 @@
     justify-content: center;
 
     @media (max-width: $mobile-size) {
-      @include fluid-property(padding, 5px);
+      @include fluid-property(min-width, 20px);
+      @include fluid-property(min-height, 20px);
+      @include fluid-property(padding-left, 6px);
+      @include fluid-property(padding-right, 6px);
       @include fluid-property(font-size, 12px);
       @include fluid-property(border-radius, var(--brs-4));
     }
