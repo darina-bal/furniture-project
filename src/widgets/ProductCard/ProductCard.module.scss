@@ -1,0 +1,152 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.hoverable {
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+
+  @media (hover: none) and (pointer: coarse) {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.alwaysVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card {
+  overflow: hidden;
+
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--gap-category);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-category));
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .hoverable {
+        opacity: 1;
+        visibility: visible;
+        transition: var(--transition);
+      }
+    }
+  }
+
+  .top {
+    position: relative;
+    width: 262px;
+    height: 349px;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, 231px);
+      @include fluid-property(height, 308px);
+    }
+
+    .badges {
+      position: absolute;
+      top: var(--gap-main-mobile);
+      left: var(--gap-main-mobile);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--padding-border-bottom);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(top, var(--gap-main-mobile));
+        @include fluid-property(left, var(--gap-main-mobile));
+        @include fluid-property(gap, var(--padding-border-bottom));
+      }
+    }
+
+    .heart {
+      position: absolute;
+      top: var(--gap-main-mobile);
+      right: var(--gap-main-mobile);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(top, var(--gap-main-mobile));
+        @include fluid-property(right, var(--gap-main-mobile));
+      }
+    }
+
+    .thumb {
+      width: 100%;
+    }
+
+    .cartWrapper {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 0 var(--gap-main-mobile) var(--gap-main-mobile);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(padding-right, var(--gap-main-mobile));
+        @include fluid-property(padding-bottom, var(--gap-main-mobile));
+        @include fluid-property(padding-left, var(--gap-main-mobile));
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-category-secondary);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, var(--gap-category-secondary));
+    }
+
+    .title {
+      font-family: var(--body_2_font-family);
+      font-weight: var(--body_2_font-weight-2);
+      font-size: var(--body_2_font-size);
+      line-height: var(--body_2_line-height);
+      color: var(--neutral-color-07);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--body_2_font-size));
+      }
+    }
+
+    .priceWrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-category);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(gap, var(--gap-category));
+      }
+
+      .price {
+        font-family: var(--caption_1_font-family);
+        font-weight: var(--caption_1_font-weight-2);
+        font-size: var(--caption_1_font-size);
+        line-height: var(--caption_1_line-height);
+        color: var(--neutral-color-07);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(font-size, var(--caption_1_font-size));
+        }
+      }
+
+      .oldPrice{
+        font-family: var(--caption_1_font-family);
+        font-weight: var(--caption_1_font-weight-2);
+        font-size: var(--caption_1_font-size);
+        line-height: var(--caption_1_line-height);
+        color: var(--neutral-color-04);
+        text-decoration: line-through;
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(font-size, var(--caption_1_font-size));
+        }
+      }
+    }
+  }
+}

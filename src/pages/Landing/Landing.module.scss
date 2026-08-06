@@ -1,0 +1,17 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.productArrivalsList {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-main);
+  overflow: hidden;
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-main-mobile));
+  }
+
+  .productArrivalsCard {
+    flex: 0 0 auto;
+  }
+}

@@ -47,9 +47,12 @@
     --border-accent: 2px solid var(--secondary-color-1);
     --border-bottom-main: 1px solid var(--neutral-color-03);
     --box-shadow: 0 64px 64px -48px rgba(15, 15, 15, 0.1);
+    --box-shadow-secondary: 0 8px 16px -8px rgba(15, 15, 15, 0.12);
 
     // button
     --button-height-main: 52px;
+    --button-height-main-mobile: 32px;
+    --button-height-secondary: 46px;
 
     // animation
     --transition: all ease-in 0.2s;
@@ -73,6 +76,8 @@
     --gap-main-mobile: 16px;
     --gap-window: 19px;
     --gap-category: 12px;
+    --gap-category-secondary: 4px;
+    --gap-stars: 2px;
     --padding-border-bottom: 8px;
     --margin-bottom-main: 80px;
     --margin-bottom-main-mobile: 40px;

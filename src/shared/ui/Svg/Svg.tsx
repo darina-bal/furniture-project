@@ -4,7 +4,9 @@ import styles from './Svg.module.scss'
 interface SvgProps extends SVGProps<SVGSVGElement> {
   iconName: string;
   spriteType: 'mono' | 'multi';
-  variant?: 'stroke' | 'stroke-fair' |'fillAndStroke' | 'fillAndStroke-fair' | 'fill' | 'fill-fair';
+  variant?: 'stroke' | 'stroke-fair' | 'stroke-middle' 
+  |'fillAndStroke' | 'fillAndStroke-fair' | 'fillAndStroke-middle'
+  | 'fill' | 'fill-fair' | 'fill-middle';
 }
 
 const Svg = (props: SvgProps) => {

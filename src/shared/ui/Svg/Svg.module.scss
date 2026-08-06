@@ -12,6 +12,11 @@
     stroke: var(--neutral-color-04);
   }
 
+  &.stroke-middle {
+    fill: none;
+    stroke: var(--neutral-color-05);
+  }
+
   &.fill {
     fill: var(--neutral-color-07);
     stroke: none;
@@ -19,6 +24,11 @@
 
   &.fill-fair {
     fill: var(--neutral-color-04);
+    stroke: none;
+  }
+
+  &.fill-middle {
+    fill: var(--neutral-color-05);
     stroke: none;
   }
 
@@ -30,5 +40,10 @@
   &.fillAndStroke-fair {
     fill: var(--neutral-color-04);
     stroke: var(--neutral-color-04);
+  }
+
+  &.fillAndStroke-middle {
+    fill: var(--neutral-color-05);
+    stroke: var(--neutral-color-05);
   }
 }

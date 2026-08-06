@@ -1,0 +1,25 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.heart {
+  width: 32px;
+  height: 32px;
+  background-color: var(--neutral-color-01);
+  border-radius: var(--brs-3);
+  box-shadow: var(--box-shadow-secondary);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(width, 32px);
+    @include fluid-property(height, 32px);
+  }
+  
+  .iconHeart {
+    width: var(--icon-size-secondary);
+    height: var(--icon-size-secondary);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, var(--icon-size-secondary));
+      @include fluid-property(height, var(--icon-size-secondary));
+    }
+  }
+}

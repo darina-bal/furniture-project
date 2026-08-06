@@ -1,0 +1,22 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-stars);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-stars));
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, 16px);
+      @include fluid-property(height, 16px);
+    }
+  }
+}

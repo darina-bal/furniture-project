@@ -1,0 +1,1 @@
+export { AddtoWishlistButton } from './ui/WishlistButton'

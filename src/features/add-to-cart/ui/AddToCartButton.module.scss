@@ -1,0 +1,23 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.button {
+  width: 100%;
+  height: var(--button-height-secondary);
+
+  font-family: var(--button-s-font-family);
+  font-weight: var(--button-s-font-weight);
+  font-size: var(--button-s-font-size);
+  line-height: var(--button-s-line-height);
+  letter-spacing: var(--button-s-letter-spacing);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(height, var(--button-height-main-mobile));
+    @include fluid-property(font-size, var(--button-s-font-size));
+  }
+
+  &.added {
+    background-color: var(--neutral-color-07);
+    color: var(--neutral-color-01);
+  }
+}

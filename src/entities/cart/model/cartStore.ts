@@ -15,7 +15,7 @@ interface CartState {
 export const useCartStore = create<CartState>()(
   persist(
     (set) => ({
-      items: mockItems,
+      items: [],
       addItem: (product) =>
         set((s) => {
           const exists = s.items.some((i) => i.product.id === product.id)
