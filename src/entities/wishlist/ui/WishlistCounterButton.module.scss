@@ -8,7 +8,7 @@
     @include fluid-property(gap, 5px);
   }
 
-  .shoppingBag {
+  .heart {
     @media (max-width: $mobile-size) {
       @include fluid-property(width, var(--icon-size-main));
       @include fluid-property(height, var(--icon-size-main));

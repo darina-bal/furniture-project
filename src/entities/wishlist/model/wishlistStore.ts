@@ -18,3 +18,5 @@ export const useWishlistStore = create<WishlistState>()(
     { name: 'wishlist' },
   ),
 )
+
+export const selectWishlistCount = (s: WishlistState) => s.ids.length

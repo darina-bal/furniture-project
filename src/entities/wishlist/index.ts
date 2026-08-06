@@ -1,5 +1,5 @@
 // ui 
-export { default } from './ui/WishlistButton'
+export { default } from './ui/WishlistCounterButton'
 
 // model 
-export { useWishlistStore } from './model/wishlistStore'
+export { useWishlistStore, selectWishlistCount } from './model/wishlistStore'

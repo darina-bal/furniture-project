@@ -6,10 +6,11 @@ import Svg from '@/shared/ui/Svg'
 import Field from '@/shared/ui/Field'
 import Accordion from '@/shared/ui/Accordion'
 import RouterLink from '@/shared/ui/RouterLink'
-import WishlistButton from '@/entities/wishlist'
+import WishlistCounterButton from '@/entities/wishlist'
 import { useUser } from '@/entities/user'
 import { ToggleCartButton } from '@/features/toggle-cart'
-import { selectTotalQuantity, useCartStore } from '@/entities/cart'
+import { useCartStore, selectTotalQuantity } from '@/entities/cart'
+import { useWishlistStore, selectWishlistCount } from "@/entities/wishlist"
 import styles from './FlyoutSearch.module.scss'
 
 // Массивы данных для циклов
@@ -40,6 +41,7 @@ const FlyoutSearch = () => {
   const { user } = useUser()
   const isOpen = useFlyoutStore((s) => s.isOpen('search'))
   const totalQuantity = useCartStore(selectTotalQuantity)
+  const wishlistCount = useWishlistStore(selectWishlistCount)
 
   return (
     <FlyoutPanel
@@ -117,7 +119,7 @@ const FlyoutSearch = () => {
             className={styles.wishlistWrapper}
           >
             Wishlist
-            <WishlistButton />
+            <WishlistCounterButton count={wishlistCount} />
           </RouterLink>
         </div>
         {user?.role === 'user' ? (
