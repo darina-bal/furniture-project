@@ -9,6 +9,7 @@ import RouterLink from '@/shared/ui/RouterLink'
 import WishlistButton from '@/entities/wishlist'
 import { useUser } from '@/entities/user'
 import { ToggleCartButton } from '@/features/toggle-cart'
+import { selectTotalQuantity, useCartStore } from '@/entities/cart'
 import styles from './FlyoutSearch.module.scss'
 
 // Массивы данных для циклов
@@ -38,6 +39,7 @@ const FlyoutSearch = () => {
   const { closeSearch } = useFlyout()
   const { user } = useUser()
   const isOpen = useFlyoutStore((s) => s.isOpen('search'))
+  const totalQuantity = useCartStore(selectTotalQuantity)
 
   return (
     <FlyoutPanel
@@ -107,7 +109,7 @@ const FlyoutSearch = () => {
             className={styles.cartWrapper}
           >
             Cart
-            <ToggleCartButton />
+            <ToggleCartButton count={totalQuantity} />
           </RouterLink>
           <RouterLink 
             linkType='navlink' 
