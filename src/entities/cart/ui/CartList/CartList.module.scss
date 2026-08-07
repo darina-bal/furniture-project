@@ -1,0 +1,12 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-main);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-main-mobile));
+  }
+}

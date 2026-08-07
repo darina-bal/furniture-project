@@ -1,0 +1,88 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.card {
+  padding: var(--gap-main) 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--border-bottom-main);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(padding-top, var(--gap-main));
+    @include fluid-property(padding-bottom, var(--gap-main));
+  }
+
+  .wrapperFirst {
+    display: flex;
+    gap: var(--gap-main-mobile);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, var(--gap-main-mobile));
+    }
+
+    .photo {
+      width: 80px;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, 80px);
+      }
+    }
+
+    .wrapperInfo {
+      display: flex;
+      flex-direction: column;
+      gap: var(--padding-border-bottom);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(gap, var(--padding-border-bottom));
+      }
+
+      .title {
+        font-family: var(--caption_1_font-family);
+        font-weight: var(--caption_1_font-weight-2);
+        font-size: var(--caption_1_font-size);
+        line-height: var(--caption_1_line-height);
+        color: var(--neutral-color-07);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(font-size, var(--caption_1_font-size));
+        }
+      }
+
+      .color {
+        font-family: var(--caption_2_font-family);
+        font-weight: var(--caption_2_font-weight-1);
+        font-size: var(--caption_2_font-size);
+        line-height: var(--caption_2_line-height);
+        color: var(--neutral-color-04);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(font-size, var(--caption_2_font-size));
+        }
+      }
+    }
+  }
+
+  .wrapperSecond {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-border-bottom);
+    align-items: flex-end;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, var(--padding-border-bottom));
+    }
+
+    .price {
+      font-family: var(--caption_1_font-family);
+      font-weight: var(--caption_1_font-weight-2);
+      font-size: var(--caption_1_font-size);
+      line-height: var(--caption_1_line-height);
+      color: var(--neutral-color-07);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--caption_1_font-size));
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import type { MouseEvent } from 'react'
 import type { Product } from '@/shared/lib/types'
 import styles from './AddToCartButton.module.scss'
 import { useCartStore } from '@/entities/cart'
@@ -18,10 +19,16 @@ const AddToCartButton = (props: AddToCartButtonProps) => {
   const addItem = useCartStore((s) => s.addItem)
   const isInCart = useCartStore((s) => s.items.some((i) => i.product.id === product.id))
 
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    addItem(product)
+  }
+
   return (
     <Button
       className={clsx(styles.button, isInCart && styles.added, className)}
-      onClick={() => addItem(product)}
+      onClick={handleClick}
     >
       {isInCart ? '✔ Added' : 'Add to cart'}
     </Button>

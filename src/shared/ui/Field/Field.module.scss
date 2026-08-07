@@ -26,17 +26,14 @@
   line-height: var(--caption_1_line-height);
 
   @media (max-width: $mobile-size) {
-    @include fluid-property(font-family, var(--caption_1_font-family));
-    @include fluid-property(font-weight, var(--caption_1_font-weight-1));
     @include fluid-property(font-size, var(--caption_1_font-size));
-    @include fluid-property(line-height, var(--caption_1_line-height));
     @include fluid-property(left, 56px);
   }
 }
 
 .input {
   width: 100%;
-  height: var(--input-height-main);
+  height: var(--height-main);
   padding-inline: var(--fieldInputPaddingX);
   background-color: transparent;
   border: var(--border-main);
@@ -51,11 +48,8 @@
   line-height: var(--caption_1_line-height);
 
   @media (max-width: $mobile-size) {
-    @include fluid-property(font-family, var(--caption_1_font-family));
-    @include fluid-property(font-weight, var(--caption_1_font-weight-1));
     @include fluid-property(font-size, var(--caption_1_font-size));
-    @include fluid-property(line-height, var(--caption_1_line-height));
-    @include fluid-property(height, var(--input-height-main));
+    @include fluid-property(height, var(--height-main));
     @include fluid-property(padding-inline, var(--fieldInputPaddingX));
   }
 

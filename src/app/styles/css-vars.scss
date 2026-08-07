@@ -41,6 +41,7 @@
     --brs-5: 4px;
     --brs-main-mobile: 6px;
     --border-main: 1px solid var(--neutral-color-07);
+    --border-main-fair: 1px solid var(--neutral-color-04);
     --border-secondary: 2px solid var(--neutral-color-01);
     --border-tertiary: 2px solid var(--neutral-color-04);
     --border-quaternary: 2px solid var(--neutral-color-02);
@@ -92,9 +93,14 @@
     --margin-bottom-secondary-mobile: 16px;
 
     // field
-    --input-height-main: 52px;
-    --input-height-main-mobile: 46px;
     --fieldInputPaddingX: 16px;
+    
+    // width-height
+    --height-main: 52px;
+    --height-main-mobile: 46px;
+    --height-secondary: 32px;
+    --width-main: 127px;
+    --width-secondary: 80px;
 
     // modal
     --bgc-overlay: rgba(0, 0, 0, 0.32);

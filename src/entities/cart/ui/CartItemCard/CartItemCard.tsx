@@ -1,6 +1,10 @@
-import ProductThumb from '@/shared/ui/ProductThumb';
+import ProductThumb from '@/shared/ui/ProductThumb'
 import type { CartItem } from '../../model/types'
+import QuantityStepper from '@/shared/ui/QuantityStepper'
+import Paragraph from '@/shared/ui/Paragraph'
 import styles from './CartItemCard.module.scss'
+import Svg from '@/shared/ui/Svg'
+import Button from '@/shared/ui/Button'
 
 interface CartItemCardProps {
   item: CartItem;
@@ -18,16 +22,33 @@ const CartItemCard = (props: CartItemCardProps) => {
   } = props
 
   return (
-    <article className="cart-item-card">
-      <ProductThumb urlPng={item.product.imageUrlPng} urlWebp={item.product.imageUrlWebp} />
-      <div>
-        <h3>{item.product.title}</h3>
-        <p>Color: {item.product.color}</p>
-        {/* <QuantityStepper value={item.quantity} onIncrement={onIncrement} onDecrement={onDecrement} /> */}
+    <article className={styles.card}>
+      <div className={styles.wrapperFirst}>
+        <ProductThumb 
+          className={styles.photo}
+          urlPng={item.product.imageUrlPng} 
+          urlWebp={item.product.imageUrlWebp} />
+        <div className={styles.wrapperInfo}>
+          <Paragraph className={styles.title}>{item.product.title}</Paragraph>
+          <Paragraph className={styles.color}>Color: {item.product.color}</Paragraph>
+          <QuantityStepper 
+            value={item.quantity} 
+            onIncrement={onIncrement} 
+            onDecrement={onDecrement} 
+            variant='compact'/>
+        </div>
       </div>
-      <div>
-        {/* <Price value={item.product.price} /> */}
-        {/* <IconButton icon="close" onClick={onRemove} /> */}
+      <div className={styles.wrapperSecond}>
+        <span className={styles.price}>${item.product.price.toFixed(2)}</span>
+        <Button
+          variant='ghost'
+          onClick={onRemove}
+        >
+          <Svg 
+            iconName='cross'
+            spriteType='mono'
+            variant='fill-fair'/>
+        </Button>
       </div>
     </article>
   )

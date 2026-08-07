@@ -1,0 +1,96 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+
+  &.default {
+    background-color: var(--neutral-color-02);
+    height: var(--height-main);
+    width: var(--width-main);
+    padding: 12px 16px;
+    border-radius: var(--brs-1);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(height, var(--height-secondary));
+      @include fluid-property(width, var(--width-secondary));
+      @include fluid-property(padding-top, 6px);
+      @include fluid-property(padding-left, 8px);
+      @include fluid-property(padding-bottom, 6px);
+      @include fluid-property(padding-right, 8px);
+    }
+
+    .button {
+      width: 20px;
+      height: 20px;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(height, 16px);
+        @include fluid-property(width, 16px);
+      }
+    }
+
+    .button, .value {
+      font-family: var(--body_2_font-family);
+      font-weight: var(--body_2_font-weight-2);
+      font-size: var(--body_2_font-size);
+      line-height: var(--body_2_line-height);
+      color: var(--neutral-color-07);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--caption_2_font-size));
+      }
+    }
+  }
+
+  &.compact {
+    background-color: transparent;
+    height: var(--height-secondary);
+    width: var(--width-secondary);
+    border: var(--border-main-fair);
+    padding: 6px 8px;
+    border-radius: var(--brs-5);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(height, var(--height-secondary));
+      @include fluid-property(width, var(--width-secondary));
+      @include fluid-property(padding-top, 6px);
+      @include fluid-property(padding-left, 8px);
+      @include fluid-property(padding-bottom, 6px);
+      @include fluid-property(padding-right, 8px);
+    }
+
+    .button {
+      width: 16px;
+      height: 16px;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(height, 16px);
+        @include fluid-property(width, 16px);
+      }
+    }
+
+    .button, .value {
+      font-family: var(--caption_2_font-family);
+      font-weight: var(--caption_2_font-weight-2);
+      font-size: var(--caption_2_font-size);
+      line-height: var(--caption_2_line-height);
+      color: var(--neutral-color-07);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--caption_2_font-size));
+      }
+    }
+  }
+
+  .value {
+    min-width: 8px;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(min-width, 8px);
+    }
+  }
+}

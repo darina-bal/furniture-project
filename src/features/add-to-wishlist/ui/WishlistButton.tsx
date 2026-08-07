@@ -1,3 +1,4 @@
+import type { MouseEvent } from 'react'
 import clsx from 'clsx'
 import { useWishlistStore } from '@/entities/wishlist'
 import Button from '@/shared/ui/Button'
@@ -22,13 +23,19 @@ export const AddtoWishlistButton = (props: AddtoWishlistButtonProps) => {
   const isActive = useWishlistStore((s) => s.ids.includes(productId))
   const toggleItem = useWishlistStore((s) => s.toggleItem)
 
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    toggleItem(productId)
+  }
+
   return (
     variant === 'heart' ? (
       <Button
         className={clsx(styles.heart, isActive && styles.active, className)} 
         variant='ghost'
         aria-label={isActive ? 'Remove from wishlist' : 'Add to wishlist'}
-        onClick={() => toggleItem(productId)}
+        onClick={handleClick}
         >
           {isInWishlist ? (
             <Svg 
