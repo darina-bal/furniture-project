@@ -2,31 +2,104 @@
 @use '@/shared/lib/styles/scss-vars' as *;
 
 .panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .header {
+  .firstWrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--gap-main-mobile);
 
-    .title {
-      font-family: var(--headline_6_font-family);
-      font-weight: var(--headline_6_font-weight);
-      font-size: var(--headline_6_font-size);
-      line-height: var(--headline_6_line-height);
-      letter-spacing: var(--headline_6_letter-spacing);
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, 0);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .title {
+        font-family: var(--headline_6_font-family);
+        font-weight: var(--headline_6_font-weight);
+        font-size: var(--headline_6_font-size);
+        line-height: var(--headline_6_line-height);
+        letter-spacing: var(--headline_6_letter-spacing);
+  
+        @media (max-width: $mobile-size) {
+          @include fluid-property(font-size, var(--headline_6_font-size));
+        }
+      }
+  
+      .cross {
+        width: var(--icon-size-main);
+        height: var(--icon-size-main);
+  
+        @media (max-width: $mobile-size) {
+          @include fluid-property(width, var(--icon-size-main));
+          @include fluid-property(height, var(--icon-size-main));
+        }
+      }
+    }
+  }
+  .secondWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-main-mobile);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, var(--gap-main-mobile));
+    }
+
+    .totalWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--gap-category) 0;
 
       @media (max-width: $mobile-size) {
-        @include fluid-property(font-size, var(--headline_6_font-size));
+        @include fluid-property(padding-top, var(--gap-category));
+        @include fluid-property(padding-bottom, var(--gap-category));
+      }
+
+      p, span {
+        font-family: var(--headline_7_font-family);
+        font-weight: var(--headline_7_font-weight);
+        font-size: var(--headline_7_font-size);
+        line-height: var(--headline_7_line-height);
+        letter-spacing: var(--headline_7_letter-spacing);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(font-size, var(--headline_7_font-size));
+        }
       }
     }
 
-    .cross {
-      width: var(--icon-size-main);
-      height: var(--icon-size-main);
+    .checkout {
+      width: 100%;
+      height: var(--height-main);
+
+      font-family: var(--button-m-font-family);
+      font-weight: var(--button-m-font-weight);
+      font-size: var(--button-m-font-size);
+      line-height: var(--button-m-line-height);
+      letter-spacing: var(--button-m-letter-spacing);
 
       @media (max-width: $mobile-size) {
-        @include fluid-property(width, var(--icon-size-main));
-        @include fluid-property(height, var(--icon-size-main));
+        @include fluid-property(font-size, var(--button-m-font-size));
+        @include fluid-property(height, var(--height-main));
+      }
+    }
+
+    .cart {
+      font-family: var(--caption_1_font-family);
+      font-weight: var(--caption_1_font-weight-2);
+      font-size: var(--caption_1_font-size);
+      line-height: var(--caption_1_line-height);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--caption_1_font-size));
       }
     }
   }
