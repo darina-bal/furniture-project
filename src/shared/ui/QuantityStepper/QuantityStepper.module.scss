@@ -27,6 +27,12 @@
       width: 20px;
       height: 20px;
 
+      &:disabled {
+        background-color: var(--neutral-color-01);
+        cursor: not-allowed;
+        border-radius: var(--brs-5);
+      }
+
       @media (max-width: $mobile-size) {
         @include fluid-property(height, 16px);
         @include fluid-property(width, 16px);
@@ -67,6 +73,12 @@
       width: 16px;
       height: 16px;
 
+      &:disabled {
+        background-color: var(--neutral-color-03);
+        cursor: not-allowed;
+        border-radius: var(--brs-5);
+      }
+
       @media (max-width: $mobile-size) {
         @include fluid-property(height, 16px);
         @include fluid-property(width, 16px);
@@ -88,6 +100,7 @@
 
   .value {
     min-width: 8px;
+    text-align: center;
 
     @media (max-width: $mobile-size) {
       @include fluid-property(min-width, 8px);

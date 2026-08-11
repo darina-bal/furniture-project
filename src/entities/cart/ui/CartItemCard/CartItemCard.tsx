@@ -1,7 +1,6 @@
 import ProductThumb from '@/shared/ui/ProductThumb'
 import type { CartItem } from '../../model/types'
 import QuantityStepper from '@/shared/ui/QuantityStepper'
-import Paragraph from '@/shared/ui/Paragraph'
 import Svg from '@/shared/ui/Svg'
 import Button from '@/shared/ui/Button'
 import clsx from 'clsx'
@@ -32,8 +31,8 @@ const CartItemCard = (props: CartItemCardProps) => {
           urlPng={item.product.imageUrlPng} 
           urlWebp={item.product.imageUrlWebp} />
         <div className={styles.wrapperInfo}>
-          <Paragraph className={styles.title}>{item.product.title}</Paragraph>
-          <Paragraph className={styles.color}>Color: {item.product.color}</Paragraph>
+          <p className={styles.title}>{item.product.title}</p>
+          <p className={styles.color}>Color: {item.product.color}</p>
           <QuantityStepper 
             value={item.quantity} 
             onIncrement={onIncrement} 

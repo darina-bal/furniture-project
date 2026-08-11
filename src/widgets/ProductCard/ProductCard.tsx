@@ -8,7 +8,6 @@ import AddToCartButton from '@/features/add-to-cart'
 import { useCartStore } from '@/entities/cart'
 import styles from './ProductCard.module.scss'
 import { Stars } from '@/entities/product'
-import Paragraph from '@/shared/ui/Paragraph'
 import RouterLink from '@/shared/ui/RouterLink'
 
 interface ProductCardProps {
@@ -60,7 +59,7 @@ const ProductCard = (props: ProductCardProps) => {
         </div>
         <div className={styles.bottom}>
           <Stars count={product.countStar}/>
-          <Paragraph className={styles.title}>{product.title}</Paragraph>
+          <p className={styles.title}>{product.title}</p>
           <div className={styles.priceWrapper}>
             <span className={styles.price}>${(product.price).toFixed(2)}</span>
             { product.oldPrice && <span className={styles.oldPrice}>${(product.oldPrice).toFixed(2)}</span> }

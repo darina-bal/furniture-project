@@ -16,12 +16,15 @@ const QuantityStepper = (props: QuantityStepperProps) => {
     variant = 'default'
   } = props
 
+  const isDecrementDisabled = value <= 1
+
   return (
     <div className={`${styles.stepper} ${styles[variant]}`}>
       <Button
         className={styles.button}
         variant='ghost'
         onClick={onDecrement}
+        disabled={isDecrementDisabled}
         aria-label="Уменьшить количество"
       >
         -

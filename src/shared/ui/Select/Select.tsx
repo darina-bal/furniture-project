@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import clsx from 'clsx'
 import { useOnClickOutside } from '../../lib/hooks/useOnClickOutside'
-import Paragraph from '../Paragraph'
 import Svg from '../Svg'
 import styles from './Select.module.scss'
 
@@ -39,7 +38,7 @@ const Select = (props: SelectProps) => {
 
   return (
     <div className={clsx(styles.wrapper, className)} ref={ref}>
-      {title && <Paragraph className={styles.title}>{title}</Paragraph>}
+      {title && <p className={styles.title}>{title}</p>}
       <div
         className={styles.trigger}
         onClick={() => setIsOpen((prev) => !prev)}

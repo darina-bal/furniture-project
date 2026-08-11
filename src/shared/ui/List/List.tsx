@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import styles from './List.module.scss'
-import Paragraph from '../Paragraph';
 
 interface ListItem {
   id: string;
@@ -26,7 +25,7 @@ const List = (props: ListProps) => {
 
   return (
     <div className={clsx(styles.wrapper, className)}>
-      {title && <Paragraph className={styles.title}>{title}</Paragraph>}
+      {title && <p className={styles.title}>{title}</p>}
       <ul className={styles.list}>
         {items.map((item) => (
           <li

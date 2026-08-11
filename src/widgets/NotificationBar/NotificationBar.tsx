@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import Container from '@/shared/ui/Container'
 import Svg from '@/shared/ui/Svg'
-import Paragraph from '@/shared/ui/Paragraph'
 import RouterLink from '@/shared/ui/RouterLink'
 import Button from '@/shared/ui/Button'
 import { deleteComponent } from '@/features/delete-component'
@@ -38,11 +37,11 @@ const NotificationBar = () => {
             variant='fill'
             className={styles.iconTicketPercent}
           />
-          <Paragraph
+          <p
             className={styles.title}
           >
             30% off storewide — Limited time! 
-          </Paragraph>
+          </p>
           <RouterLink
             to='shop'
             className={styles.link}

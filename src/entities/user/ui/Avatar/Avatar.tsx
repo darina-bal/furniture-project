@@ -1,7 +1,6 @@
 import type { ComponentPropsWithRef } from 'react';
 import clsx from 'clsx'
 import Svg from '@/shared/ui/Svg'
-import Paragraph from '@/shared/ui/Paragraph';
 import { useUser } from '../../hooks/useUser'
 import styles from './Avatar.module.scss'
 
@@ -27,9 +26,9 @@ const Avatar = (props: AvatarProps) => {
             className={styles.iconCamera}/>
         </div>
       </div>
-      <Paragraph className={styles.userDisplayName}>
+      <p className={styles.userDisplayName}>
         {user?.displayname}
-      </Paragraph>
+      </p>
     </div>
   )
 }
