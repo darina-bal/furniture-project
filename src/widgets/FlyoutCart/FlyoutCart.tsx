@@ -1,6 +1,5 @@
 import FlyoutPanel from '@/shared/ui/FlyoutPanel'
 import { useFlyout, useFlyoutStore } from '@/shared/lib/hooks/useFlyout'
-import { useUser } from '@/entities/user'
 import Heading from '@/shared/ui/Heading'
 import Button from '@/shared/ui/Button'
 import Svg from '@/shared/ui/Svg'
@@ -11,7 +10,6 @@ import RouterLink from '@/shared/ui/RouterLink'
 
 const FlyoutCart = () => {
   const { closeCart } = useFlyout()
-  const { user } = useUser()
   const isOpen = useFlyoutStore((s) => s.isOpen('cart'))
 
   const items = useCartStore(selectCartItems)

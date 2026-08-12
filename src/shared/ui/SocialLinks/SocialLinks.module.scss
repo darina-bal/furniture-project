@@ -1,0 +1,19 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.wrapperIcon {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-main);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-main));
+  }
+
+  .iconFooterInst, .iconFooterFace, .iconFooterYout {
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, var(--icon-size-main));
+      @include fluid-property(height, var(--icon-size-main));
+    }
+  }
+}

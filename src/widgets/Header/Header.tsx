@@ -9,14 +9,8 @@ import RouterLink from '@/shared/ui/RouterLink'
 import Button from '@/shared/ui/Button'
 import Svg from '@/shared/ui/Svg'
 import { selectTotalQuantity, useCartStore } from '@/entities/cart'
+import { headerNavItems, navigationRoutes } from '@/shared/config/navigation'
 import styles from './Header.module.scss'
-
-const headerNavItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Shop', href: 'shop' },
-  { label: 'Product', href: 'product' },
-  { label: 'Contact Us', href: 'contact' },
-];
 
 const Header = () => {
   const { user } = useUser()
@@ -31,11 +25,12 @@ const Header = () => {
         </div>
         <Navbar 
           items={headerNavItems}
-          className={styles.navbar} />
+          className={styles.navbar} 
+        />
         <div className={styles.iconWrapper}>
           <ToggleSearchButton />
           {user?.role !== 'guest' ? (
-            <RouterLink to='user' variant='secondary'>
+            <RouterLink to={navigationRoutes.user} variant='secondary'>
               <Button 
                 variant='ghost'
                 className={styles.wrapperIconUserCircle}
@@ -46,7 +41,7 @@ const Header = () => {
               </Button>
             </RouterLink>
           ) : (
-            <RouterLink to='auth' variant='secondary'>
+            <RouterLink to={navigationRoutes.auth} variant='secondary'>
               <Button 
                 variant='ghost'
                 className={styles.wrapperIconUserCircle}

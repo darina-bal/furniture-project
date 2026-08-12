@@ -1,5 +1,5 @@
 import ProductCard from "@/widgets/ProductCard" 
-import { mockProducts } from "@/shared/lib/api"
+import { mockProducts } from "@/shared/api"
 import Container from "@/shared/ui/Container"
 import styles from './Landing.module.scss'
 
