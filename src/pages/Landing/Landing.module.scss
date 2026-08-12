@@ -20,6 +20,14 @@
   }
 }
 
+.hero {
+  margin-bottom: var(--margin-3);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(margin-bottom, var(--margin-3));
+  }
+}
+
 .productArrivalsList {
   display: flex;
   align-items: center;

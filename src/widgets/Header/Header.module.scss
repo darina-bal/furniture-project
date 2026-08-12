@@ -12,7 +12,7 @@
     height: 60px;
 
     @media (max-width: $mobile-size) {
-      @include fluid-property(height, 60px)
+      @include fluid-property(height, 60px);
     }
 
     .logoWrapper {
