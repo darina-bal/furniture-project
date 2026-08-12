@@ -1,33 +1,76 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
 .paginationWrapper {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  inset: 0;
+  padding: 0 var(--button-height-main-mobile);
 
-  .buttonArrowLeft {
+  @media (max-width: $mobile-size) {
+    @include fluid-property(padding-right, var(--gap-main));
+    @include fluid-property(padding-left, var(--gap-main));
+  }
+
+  .buttonArrowLeft, .buttonArrowRight {
+    pointer-events: auto; 
     background-color: var(--neutral-color-01);
     border-radius: var(--brs-3);
+  }
 
-    width: 52px;
-    height: 52px;
+  &.default {
+    .buttonArrowLeft, .buttonArrowRight {
+      width: var(--button-height-main);
+      height: var(--button-height-main);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--button-height-main));
+        @include fluid-property(height, var(--button-height-main));
+      }
+    }
 
     .arrowLeft {
       transform: rotate(180deg);
-  
-      width: 32px;
-      height: 32px;
+    }
+
+    .arrowRight, .arrowLeft {
+      width: var(--button-height-main-mobile);
+      height: var(--button-height-main-mobile);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--button-height-main-mobile));
+        @include fluid-property(height, var(--button-height-main-mobile));
+      }
     }
   }
 
-  .buttonArrowRight {
-    background-color: var(--neutral-color-01);
-    border-radius: var(--brs-3);
+  &.secondary {
+    .buttonArrowLeft, .buttonArrowRight {
+      width: var(--button-height-tertiary);
+      height: var(--button-height-tertiary);
 
-    width: 52px;
-    height: 52px;
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--button-height-tertiary));
+        @include fluid-property(height, var(--button-height-tertiary));
+      }
+    }
+  
+    .arrowLeft {
+      transform: rotate(180deg);
+    }
+  
+    .arrowRight, .arrowLeft {
+      width: var(--icon-size-main);
+      height: var(--icon-size-main);
 
-    .arrowRight {
-      width: 32px;
-      height: 32px;
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, var(--icon-size-main));
+        @include fluid-property(height, var(--icon-size-main));
+      }
     }
   }
 }

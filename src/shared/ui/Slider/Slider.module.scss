@@ -1,0 +1,39 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.slider {
+  position: relative;
+
+  --bullet-size: 8px;
+  --bullet-active-width: 30px;
+  --bullet-gap: 8px;
+  --swiper-pagination-bottom: 32px;
+
+  @media (max-width: $mobile-size) {
+    --swiper-pagination-bottom: 16px;
+  }
+
+  .bullet,
+  .bulletActive {
+    display: inline-block;
+    width: var(--bullet-size);
+    height: var(--bullet-size);
+    margin: 0 var(--bullet-gap);
+    border-radius: 999px;
+    background-color: #fff;
+    cursor: pointer;
+    transition:
+      width 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .bullet {
+    opacity: 1;
+  }
+
+  .bulletActive,
+  .bullet.bulletActive {
+    width: var(--bullet-active-width);
+    opacity: 1;
+  }
+}

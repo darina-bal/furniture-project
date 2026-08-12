@@ -1,6 +1,25 @@
 @use '@/shared/lib/styles/mixins' as *;
 @use '@/shared/lib/styles/scss-vars' as *;
 
+.slider {
+  margin-bottom: var(--margin-4);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(margin-bottom, var(--margin-4));
+  }
+
+  img {
+    height: 536px;
+    width: 100%;
+    object-position: bottom;
+    object-fit: cover;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(height, 304px);
+    }
+  }
+}
+
 .productArrivalsList {
   display: flex;
   align-items: center;
