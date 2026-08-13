@@ -1,0 +1,21 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-main);
+
+  @media (max-width: $tablet-size) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-main-mobile));
+  }
+
+  .featured {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+}

@@ -28,6 +28,14 @@
   }
 }
 
+.showcase {
+  margin-bottom: var(--margin-2);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(margin-bottom, var(--margin-4));
+  }
+}
+
 .productArrivalsList {
   display: flex;
   align-items: center;

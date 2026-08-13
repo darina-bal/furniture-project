@@ -2,8 +2,10 @@ import ProductCard from "@/widgets/ProductCard"
 import { mockProducts } from "@/shared/api"
 import Container from "@/shared/ui/Container"
 import Slider from "@/shared/ui/Slider"
-import styles from './Landing.module.scss'
 import Hero from "@/widgets/Hero"
+import CategoryShowcase from "@/widgets/CategoryShowcase"
+import { mockCategory } from '@/entities/category'
+import styles from './Landing.module.scss'
 
 const Landing = () => {
   return (
@@ -13,6 +15,9 @@ const Landing = () => {
       </Container>
       <Container className={styles.hero}>
         <Hero />
+      </Container>
+      <Container className={styles.showcase}>
+        <CategoryShowcase categories={mockCategory} />
       </Container>
       <Container className={styles.productArrivalsList}>
         {mockProducts.map((item) => (

@@ -1,4 +1,4 @@
-import { mockProducts } from '@/shared/lib/api'
+import { mockProducts } from '@/shared/api'
 import type { CartItem } from './types'
 
 export const mockItems: CartItem[] = [
