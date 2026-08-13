@@ -7,6 +7,11 @@
   align-items: flex-start;
   justify-content: space-between;
 
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-touch-callout: none;
+
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       transform: var(--transform-secondary);

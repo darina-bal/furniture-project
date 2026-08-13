@@ -11,7 +11,7 @@ const Landing = () => {
   return (
     <>
       <Container className={styles.slider}>
-        <Slider slides={['/img/landing-1.jpg', '/img/landing-1.jpg', '/img/landing-1.jpg']} />
+        <Slider slides={['/img/landing-1.jpg', '/img/forSlide-1.png', '/img/forSlide-2.jpg']} autoPlay />
       </Container>
       <Container className={styles.hero}>
         <Hero />

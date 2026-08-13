@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -12,9 +12,57 @@ import styles from './Slider.module.scss'
 interface SliderProps {
   slides: string[];
   className?: string;
+
+  /**
+   * Включает автопролистывание.
+   * Если передать число — это будет задержка в миллисекундах.
+   *
+   * Пример:
+   * autoPlay = true -> 10 секунд по умолчанию
+   * autoPlay = 5000 -> 5 секунд
+   */
+  autoPlay?: boolean | number;
+
+  /**
+   * Задержка автопролистывания в миллисекундах.
+   * Используется, если autoPlay = true.
+   *
+   * По умолчанию 10000 мс = 10 секунд.
+   */
+  autoplayDelay?: number;
+
+  /**
+   * Скорость анимации переключения слайда в миллисекундах.
+   *
+   * Например:
+   * speed = 300 — быстро
+   * speed = 1000 — медленно
+   */
+  speed?: number;
+
+  /**
+   * Останавливать ли автопролистывание при наведении мыши.
+   */
+  pauseOnMouseEnter?: boolean;
+
+  /**
+   * Отключать ли автопролистывание после взаимодействия пользователя со слайдером.
+   * Обычно лучше оставить false, чтобы автопролистывание продолжалось.
+   */
+  disableOnInteraction?: boolean;
 }
 
-const Slider = ({ slides, className }: SliderProps) => {
+const Slider = (props: SliderProps) => {
+  const {
+    slides,
+    className,
+    autoPlay = false,
+    autoplayDelay = 10000,
+    speed = 600,
+    pauseOnMouseEnter = true,
+    disableOnInteraction = false,
+  } = props; 
+
   const [swiper, setSwiper] = useState<SwiperClass | null>(null);
 
   const handlePrev = useCallback(() => swiper?.slidePrev(), [swiper]);
@@ -25,9 +73,14 @@ const Slider = ({ slides, className }: SliderProps) => {
   return (
     <section className={clsx(styles.slider, className)}>
       <Swiper
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         loop 
-        speed={600}
+        speed={speed}
+        autoplay={{
+          delay: typeof autoPlay === 'number' ? autoPlay : autoplayDelay,
+          disableOnInteraction,
+          pauseOnMouseEnter,
+        }}
         pagination={{ 
           clickable: true,
           bulletClass: styles.bullet,
