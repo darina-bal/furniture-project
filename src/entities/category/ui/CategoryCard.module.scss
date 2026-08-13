@@ -4,7 +4,36 @@
 .card {
   background-color: var(--neutral-color-02);
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: var(--transform-secondary);
+
+      .link {
+        opacity: var(--link-opacity);
+
+        &::before{
+          opacity: var(--link-opacity);
+        }
+      }
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      transform: var(--transform-secondary);
+
+      .link {
+        opacity: var(--link-opacity);
+
+        &::before{
+          opacity: var(--link-opacity);
+        }
+      }
+    }
+  }
 
   .wrapper {
     display: flex;
@@ -25,6 +54,25 @@
 
       @media (max-width: $mobile-size) {
         @include fluid-property(font-size, var(--headline_6_font-size));
+      }
+    }
+
+    .link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: var(--gap-category-secondary);
+      transition: var(--transition);
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background-color: var(--neutral-color-07);
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transition: var(--transition);
       }
     }
   }

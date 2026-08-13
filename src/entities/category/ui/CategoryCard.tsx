@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Heading from '@/shared/ui/Heading'
 import type { Category } from '../model/types'
 import RouterLink from '@/shared/ui/RouterLink'
+import Svg from '@/shared/ui/Svg'
 import styles from './CategoryCard.module.scss'
 
 export interface CategoryCardProps {
@@ -18,18 +19,28 @@ const CategoryCard = (props: CategoryCardProps) => {
   } = props
 
   return (
-    <article className={clsx(styles.card, styles[variant], className)}>
+    <RouterLink 
+      className={clsx(styles.card, styles[variant], className)}
+      to={category.href}
+      variant='secondary'
+    >
       <div className={styles.wrapper}>
         <Heading level='h2' className={styles.title}>
           {category.title}
         </Heading>
-        <RouterLink to={category.href} className={styles.link}>Shop Now</RouterLink>
+        <span className={styles.link}>
+          Shop Now
+          <Svg 
+            iconName='arrow-right'
+            spriteType='mono'
+            className={styles.arrowRight}/>
+        </span>
       </div>
       <picture className={styles.imgWrapper}>
         <source srcSet={category.imageWebp} type='image/webp' />
         <img src={category.imagePng} alt={category.title}/>
       </picture>
-    </article>
+    </RouterLink>
   )
 }
 

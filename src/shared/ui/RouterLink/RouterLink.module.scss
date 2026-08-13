@@ -1,5 +1,5 @@
-@use '@/shared/lib/styles/mixins' as *;
-@use '@/shared/lib/styles/scss-vars' as *;
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
 
 .link {
   color: var(--neutral-color-07);
@@ -72,20 +72,6 @@
       height: 20px;
 
       margin-left: 4px;
-    }
-  }
-
-  &.secondary {
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: var(--neutral-color-01);
-      }
-    }
-
-    @media (hover: none) and (pointer: coarse) {
-      &:active {
-        color: var(--neutral-color-01);
-      }
     }
   }
 }
