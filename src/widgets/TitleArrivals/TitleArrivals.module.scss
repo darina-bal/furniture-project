@@ -1,0 +1,21 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.titleArrivals {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  .title {
+    font-family: var(--headline_4_font-family);
+    font-weight: var(--headline_4_font-weight);
+    font-size: var(--headline_4_font-size);
+    line-height: var(--headline_4_line-height);
+    letter-spacing: var(--headline_4_letter-spacing);
+    max-width: 150px;
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(font-size, var(--headline_4_font-size));
+    }
+  }
+}

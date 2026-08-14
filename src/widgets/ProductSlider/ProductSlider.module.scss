@@ -1,0 +1,60 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.productArrivals {
+  width: 100%;
+
+  .slider {
+    width: calc(50% + 50vw);
+    margin-right: calc(50% - 50vw);
+
+    .slide {
+      width: 262px; // ширина карточки; при slidesPerView="auto" ширину задаёт slide
+      height: auto;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, 231px);
+      }
+
+      .card {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .scrollbarContainer {
+    position: relative;
+
+    .scrollbar {
+      margin-top: var(--margin-2);
+      position: relative;
+      height: 4px;
+      width: 100%;
+      border-radius: var(--brs-2);
+      background-color: var(--neutral-color-03);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(margin-top, var(--margin-3));
+      }
+    }
+  }
+
+  .scrollbarDrag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: var(--brs-2);
+    background-color: var(--neutral-color-05);
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .scrollbarLocked, .scrollbarDisabled {
+    display: none; // все карточки поместились — трек скрыт
+  }
+}

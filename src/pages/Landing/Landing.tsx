@@ -5,7 +5,9 @@ import Slider from "@/shared/ui/Slider"
 import Hero from "@/widgets/Hero"
 import CategoryShowcase from "@/widgets/CategoryShowcase"
 import { mockCategory } from '@/entities/category'
+import TitleArrivals from "@/widgets/TitleArrivals"
 import styles from './Landing.module.scss'
+import ProductSlider from "@/widgets/ProductSlider"
 
 const Landing = () => {
   return (
@@ -19,7 +21,13 @@ const Landing = () => {
       <Container className={styles.showcase}>
         <CategoryShowcase categories={mockCategory} />
       </Container>
-      <Container className={styles.productArrivalsList}>
+      <Container className={styles.titleArrivals}>
+        <TitleArrivals />
+      </Container>
+      <Container className={styles.sliderArrivals}>
+        <ProductSlider />
+      </Container>
+      {/* <Container className={styles.productArrivalsList}>
         {mockProducts.map((item) => (
           <ProductCard
             key={item.id}
@@ -28,7 +36,7 @@ const Landing = () => {
             link={item.url}
           />
         ))}
-      </Container>
+      </Container> */}
     </>
   )
 }
