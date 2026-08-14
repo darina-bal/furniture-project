@@ -2,6 +2,7 @@
 @use '@/shared/lib/styles/scss-vars' as *;
 
 .notificationBar {
+  position: relative;
   height: 40px;
   background-color: var(--neutral-color-02);
 
@@ -78,15 +79,10 @@
   }
 
   .crossButton {
-    position: fixed;
+    position: absolute;
     right: 16px;
-    top: 10px;
-
-    @media (max-width: $mobile-size) {
-      position: relative;
-      right: 0;
-      top: 0;
-    }
+    top: 50%;
+    transform: translateY(-50%);
 
     .cross {
       width: var(--icon-size-secondary);

@@ -49,18 +49,18 @@ const NotificationBar = () => {
             Shop Now
           </RouterLink>
         </div>
-        <Button
-          variant='ghost'
-          className={styles.crossButton}
-          onClick={handleCloseClick}
-        >
-          <Svg 
-            iconName='cross'
-            spriteType='mono'
-            variant='fill-fair'
-            className={styles.cross} />
-        </Button>
       </Container>
+      <Button
+        variant='ghost'
+        className={styles.crossButton}
+        onClick={handleCloseClick}
+      >
+        <Svg 
+          iconName='cross'
+          spriteType='mono'
+          variant='fill-fair'
+          className={styles.cross} />
+      </Button>
     </div>
   )
 }
