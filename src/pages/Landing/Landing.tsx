@@ -7,6 +7,7 @@ import TitleArrivals from "@/widgets/TitleArrivals"
 import ProductSlider from "@/widgets/ProductSlider"
 import Benefits from "@/widgets/Benefits"
 import styles from './Landing.module.scss'
+import Sales from "@/widgets/Sales"
 
 const Landing = () => {
   return (
@@ -29,6 +30,7 @@ const Landing = () => {
       <Container className={styles.benefits}>
         <Benefits />
       </Container>
+      <Sales className={styles.sales}/>
     </>
   )
 }

@@ -1,0 +1,98 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.split {
+  flex-wrap: wrap;
+
+  .image {
+    display: block;
+    height: 523px;
+  
+    @media (max-width: $mobile-size) {
+      @include fluid-property(height, 367px);
+    }
+  
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .secondContainer {
+    background-color: var(--neutral-color-02);
+    display: flex;
+    align-items: center;
+  
+    .wrapperSecondContainer {
+      padding-left: var(--gap-sales);
+      padding-top: 58px;
+      padding-bottom: 58px;
+  
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-main);
+  
+      @media (max-width: $mobile-size) {
+        padding-left: inherit;
+        @include fluid-property(padding-top, 58px);
+        @include fluid-property(padding-bottom, 58px);
+        @include fluid-property(padding-left, var(--container-padding-mobile));
+        @include fluid-property(padding-right, var(--container-padding-mobile));
+        @include fluid-property(gap, var(--gap-main));
+      }
+  
+      .wrapperText {
+        max-width: 452px;
+  
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-main-mobile);
+
+        @media (max-width: $mobile-size) {
+          max-width: none;
+          @include fluid-property(gap, var(--gap-main-mobile));
+        }
+  
+        .saleText {
+          font-family: var(--hairline_1_font-family);
+          font-weight: var(--hairline_1_font-weight);
+          font-size: var(--hairline_1_font-size);
+          line-height: var(--hairline_1_line-height);
+          letter-spacing: var(--hairline_1_letter-spacing);
+          color: var(--secondary-color-1);
+
+          @media (max-width: $mobile-size) {
+            @include fluid-property(font-size, var(--hairline_1_font-size));
+          }
+        }
+  
+        .title {
+          font-family: var(--headline_4_font-family);
+          font-weight: var(--headline_4_font-weight);
+          font-size: var(--headline_4_font-size);
+          line-height: var(--headline_4_line-height);
+          letter-spacing: var(--headline_4_letter-spacing);
+
+          @media (max-width: $mobile-size) {
+            @include fluid-property(font-size, var(--headline_5_font-size));
+            line-height: var(--headline_5_line-height);
+            letter-spacing: var(--headline_5_letter-spacing);
+          }
+        }
+  
+        .description {
+          font-family: var(--body_1_font-family);
+          font-weight: var(--body_1_font-weight-1);
+          font-size: var(--body_1_font-size);
+          line-height: var(--body_1_line-height);
+
+          @media (max-width: $mobile-size) {
+            @include fluid-property(font-size, var(--body_2_font-size));
+          }
+        }
+      }
+    }
+  }
+}

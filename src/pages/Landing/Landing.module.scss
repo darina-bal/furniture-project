@@ -59,3 +59,7 @@
     @include fluid-property(margin-bottom, var(--margin-4));
   }
 }
+
+.sales {
+  margin-bottom: var(--margin-1);
+}

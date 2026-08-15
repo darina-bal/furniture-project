@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import Heading from '@/shared/ui/Heading'
 import type { Category } from '../model/types'
 import RouterLink from '@/shared/ui/RouterLink'
-import Svg from '@/shared/ui/Svg'
 import styles from './CategoryCard.module.scss'
 import SpanLink from '@/shared/ui/SpanLink'
 
