@@ -52,17 +52,10 @@
   }
 }
 
-.productArrivalsList {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-main);
-  overflow: hidden;
+.benefits {
+  margin-bottom: var(--margin-2);
 
   @media (max-width: $mobile-size) {
-    @include fluid-property(gap, var(--gap-main-mobile));
-  }
-
-  .productArrivalsCard {
-    flex: 0 0 auto;
+    @include fluid-property(margin-bottom, var(--margin-4));
   }
 }

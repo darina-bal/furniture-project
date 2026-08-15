@@ -1,13 +1,12 @@
-import ProductCard from "@/widgets/ProductCard" 
-import { mockProducts } from "@/shared/api"
 import Container from "@/shared/ui/Container"
 import Slider from "@/shared/ui/Slider"
 import Hero from "@/widgets/Hero"
 import CategoryShowcase from "@/widgets/CategoryShowcase"
 import { mockCategory } from '@/entities/category'
 import TitleArrivals from "@/widgets/TitleArrivals"
-import styles from './Landing.module.scss'
 import ProductSlider from "@/widgets/ProductSlider"
+import Benefits from "@/widgets/Benefits"
+import styles from './Landing.module.scss'
 
 const Landing = () => {
   return (
@@ -27,16 +26,9 @@ const Landing = () => {
       <Container className={styles.sliderArrivals}>
         <ProductSlider />
       </Container>
-      {/* <Container className={styles.productArrivalsList}>
-        {mockProducts.map((item) => (
-          <ProductCard
-            key={item.id}
-            product={item}
-            className={styles.productArrivalsCard}
-            link={item.url}
-          />
-        ))}
-      </Container> */}
+      <Container className={styles.benefits}>
+        <Benefits />
+      </Container>
     </>
   )
 }

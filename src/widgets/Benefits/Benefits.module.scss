@@ -1,0 +1,91 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.benefits {
+  display: flex;
+  gap: var(--gap-main);
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-main));
+  }
+
+  .list {
+    display: flex;
+    gap: var(--gap-main);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, var(--padding-border-bottom));
+    }
+
+    .item {
+      padding: var(--margin-2) var(--margin-4);
+      background-color: var(--neutral-color-02);
+
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-main-mobile);
+
+      width: 262px;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(padding-top, var(--margin-4));
+        @include fluid-property(padding-right, var(--gap-main-mobile));
+        @include fluid-property(padding-bottom, var(--margin-4));
+        @include fluid-property(padding-left, var(--gap-main-mobile));
+        @include fluid-property(gap, var(--gap-main-mobile));
+        @include fluid-property(width, 152px);
+      }
+
+      svg {
+        width: var(--icon-size-tertiary);
+        height: var(--icon-size-tertiary);
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(width, var(--icon-size-tertiary));
+          @include fluid-property(height, var(--icon-size-tertiary));
+        }
+      }
+
+      .wrapperText {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-border-bottom);
+        min-width: 198px;
+
+        @media (max-width: $mobile-size) {
+          @include fluid-property(gap, var(--gap-category-secondary));
+          @include fluid-property(min-width, 120px);
+        }
+
+        .title {
+          font-family: var(--headline_7_font-family);
+          font-weight: var(--headline_7_font-weight);
+          font-size: var(--headline_7_font-size);
+          line-height: var(--headline_7_line-height);
+          letter-spacing: var(--headline_7_letter-spacing);
+          color: var(--neutral-color-07);
+
+          @media (max-width: $mobile-size) {
+            @include fluid-property(font-size, var(--caption_1_font-size));
+            font-family: var(--caption_1_font-family);
+            font-weight: var(--caption_1_font-weight-2);
+            line-height: var(--caption_1_line-height);
+          }
+        }
+
+        .description {
+          font-family: var(--caption_1_font-family);
+          font-weight: var(--caption_1_font-weight-1);
+          line-height: var(--caption_1_line-height);
+          color: var(--neutral-color-04);
+
+          @media (max-width: $mobile-size) {
+            @include fluid-property(font-size, var(--caption_1_font-size));
+          }
+        }
+      }
+    }
+  }
+}
