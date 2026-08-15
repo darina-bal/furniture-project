@@ -4,6 +4,7 @@ import type { Category } from '../model/types'
 import RouterLink from '@/shared/ui/RouterLink'
 import Svg from '@/shared/ui/Svg'
 import styles from './CategoryCard.module.scss'
+import SpanLink from '@/shared/ui/SpanLink'
 
 export interface CategoryCardProps {
   category: Category;
@@ -28,13 +29,7 @@ const CategoryCard = (props: CategoryCardProps) => {
         <Heading level='h2' className={styles.title}>
           {category.title}
         </Heading>
-        <span className={styles.link}>
-          Shop Now
-          <Svg 
-            iconName='arrow-right'
-            spriteType='mono'
-            className={styles.arrowRight}/>
-        </span>
+        <SpanLink className={styles.link}>Shop Now</SpanLink>
       </div>
       <picture className={styles.imgWrapper}>
         <source srcSet={category.imageWebp} type='image/webp' />

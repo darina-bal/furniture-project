@@ -1,0 +1,46 @@
+@use '../../lib/styles/mixins' as *;
+@use '../../lib/styles/scss-vars' as *;
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-category-secondary);
+  transition: var(--transition);
+
+  font-family: var(--button-s-font-family);
+  font-weight: var(--button-s-font-weight);
+  font-size: var(--button-s-font-size);
+  line-height: var(--button-s-line-height);
+  letter-spacing: var(--button-s-letter-spacing);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(font-size, var(--button-xs-font-size));
+    @include fluid-property(gap, var(--gap-category-secondary));
+    font-family: var(--button-xs-font-family);
+    font-weight: var(--button-xs-font-weight);
+    line-height: var(--button-xs-line-height);
+    letter-spacing: var(--button-xs-letter-spacing);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: var(--neutral-color-07);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: var(--transition);
+  }
+
+  .arrowRight {
+    width: var(--icon-size-secondary);
+    height: var(--icon-size-secondary);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(width, var(--icon-size-main-mobile));
+      @include fluid-property(height, var(--icon-size-main-mobile));
+    }
+  }
+}

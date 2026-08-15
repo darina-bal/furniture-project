@@ -61,25 +61,6 @@
         @include fluid-property(font-size, var(--headline_6_font-size));
       }
     }
-
-    .link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: var(--gap-category-secondary);
-      transition: var(--transition);
-
-      &::before {
-        content: '';
-        position: absolute;
-        height: 1px;
-        background-color: var(--neutral-color-07);
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        transition: var(--transition);
-      }
-    }
   }
 
   .imgWrapper {
