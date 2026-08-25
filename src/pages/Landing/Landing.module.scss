@@ -63,3 +63,19 @@
 .sales {
   margin-bottom: var(--margin-1);
 }
+
+.titleArticles {
+  margin-bottom: var(--margin-3);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(margin-bottom, var(--margin-3));
+  }
+}
+
+.articleShowcase {
+  margin-bottom: var(--margin-1);
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(margin-bottom, var(--margin-3));
+  }
+}

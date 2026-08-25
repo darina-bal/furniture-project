@@ -25,6 +25,12 @@ export const navigationRoutes = {
 
   auth: 'auth',
   user: 'user',
+
+  blog: 'blog',
+  blogDecor: 'blog/7-ways-to-decor',
+  blogKitchen: 'blog/kitchen-organization',
+  blogBedroom: 'blog/decor-your-bedroom',
+  blogBathroom: 'blog/bathroom',
 } as const;
 
 const shopChildren: NavigationLink[] = [

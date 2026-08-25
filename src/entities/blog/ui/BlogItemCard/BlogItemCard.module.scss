@@ -1,0 +1,93 @@
+@use '@/shared/lib/styles/mixins' as *;
+@use '@/shared/lib/styles/scss-vars' as *;
+
+.articleBlog {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-main);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  @media (max-width: $mobile-size) {
+    @include fluid-property(gap, var(--gap-main-mobile));
+  }
+
+  .img{
+    display: block;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 357px;
+      height: 325px;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(width, 311px);
+        @include fluid-property(height, 283px);
+      }
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-border-bottom);
+
+    @media (max-width: $mobile-size) {
+      @include fluid-property(gap, var(--padding-border-bottom));
+    }
+
+    .title, .shortTitle {
+      font-family: var(--headline_7_font-family);
+      font-weight: var(--headline_7_font-weight);
+      font-size: var(--headline_7_font-size);
+      line-height: var(--headline_7_line-height);
+      letter-spacing: var(--headline_7_letter-spacing);
+      max-width: 357px;
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--body_2_font-size));
+        @include fluid-property(max-width, 311px);
+        line-height: var(--body_2_line-height);
+      }
+    }
+
+    .shortTitle {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .title {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .spanLink {
+      align-self: flex-start; 
+    }
+
+    .date {
+      font-family: var(--caption_2_font-family);
+      font-weight: var(--caption_2_font-weight-1);
+      font-size: var(--caption_2_font-size);
+      line-height: var(--caption_2_line-height);
+
+      @media (max-width: $mobile-size) {
+        @include fluid-property(font-size, var(--caption_2_font-size));
+      }
+    }
+  }
+}
