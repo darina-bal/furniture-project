@@ -25,7 +25,10 @@ const BlogItemCard = (props: BlogItemCardProps) => {
     >
       <picture className={styles.img}>
         <source srcSet={item.imgWebp} type='image/webp' />
-        <img src={item.imgJpg} alt={item.title} />
+        <img src={item.imgJpg}
+          alt={item.title}
+          loading="lazy"
+          decoding="async"/>
       </picture>
       { variant === 'withDate' ? (
         <div className={styles.infoWrapper}>

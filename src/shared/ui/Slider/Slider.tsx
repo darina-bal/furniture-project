@@ -94,6 +94,8 @@ const Slider = (props: SliderProps) => {
               className={styles.image}
               src={src}
               alt={`Слайд ${index + 1}`}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchPriority={index === 0 ? 'high' : 'auto'}
             />
           </SwiperSlide>
         ))}

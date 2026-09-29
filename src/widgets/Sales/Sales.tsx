@@ -17,7 +17,10 @@ const Sales = (props: SalesProps) => {
         <Container.SplitLeft>
           <picture className={styles.image}>
             <source srcSet='/img/landing-2.webp' type='image/webp' />
-            <img src='/img/landing-2.jpg' alt="landing-2"/>
+            <img src='/img/landing-2.jpg'
+              alt="landing-2"
+              loading="lazy"
+              decoding="async"/>
           </picture>
         </Container.SplitLeft>
         <Container.SplitRight className={styles.secondContainer}>

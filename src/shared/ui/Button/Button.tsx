@@ -23,7 +23,8 @@ const Button = (props: ButtonProps) => {
   ].filter(Boolean).join(' ')
 
   return (
-    <button 
+    <button
+      type={type}
       className={classNames}
       disabled={isDisabled}
       {...rest}>

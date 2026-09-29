@@ -1,7 +1,7 @@
 import type { ComponentPropsWithRef } from 'react';
 import styles from './Container.module.scss'
 
-interface ContainerProps extends ComponentPropsWithRef<'div'>{}
+type ContainerProps = ComponentPropsWithRef<'div'>
 
 const ContainerBase = (props: ContainerProps) => {
   const {

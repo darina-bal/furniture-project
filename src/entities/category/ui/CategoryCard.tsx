@@ -32,7 +32,10 @@ const CategoryCard = (props: CategoryCardProps) => {
       </div>
       <picture className={styles.imgWrapper}>
         <source srcSet={category.imageWebp} type='image/webp' />
-        <img src={category.imagePng} alt={category.title}/>
+        <img src={category.imagePng}
+          alt={category.title}
+          loading="lazy"
+          decoding="async"/>
       </picture>
     </RouterLink>
   )

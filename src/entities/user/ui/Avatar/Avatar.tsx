@@ -4,7 +4,7 @@ import Svg from '@/shared/ui/Svg'
 import { useUser } from '../../hooks/useUser'
 import styles from './Avatar.module.scss'
 
-interface AvatarProps extends ComponentPropsWithRef<'div'>{}
+type AvatarProps = ComponentPropsWithRef<'div'>
 
 const Avatar = (props: AvatarProps) => {
   const { className } = props
@@ -16,7 +16,10 @@ const Avatar = (props: AvatarProps) => {
       <div className={styles.wrapperAvatar}>
         <picture className={styles.avatar}>
           <source srcSet={user?.avatarUrlWebp} type='image/webp' />
-          <img src={user?.avatarUrlJpg} alt="avatar"/>
+          <img src={user?.avatarUrlJpg}
+            alt="avatar"
+            loading="lazy"
+            decoding="async"/>
         </picture>
         <div className={styles.iconWrapper}>
           <Svg 

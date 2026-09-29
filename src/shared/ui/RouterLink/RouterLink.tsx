@@ -15,7 +15,7 @@ type RouterLinkProps =
 const RouterLink = (props: RouterLinkProps) => {
   if (props.linkType === 'navlink') {
     const {
-      linkType = 'link',
+      linkType,
       children,
       className,
       ...rest
@@ -48,7 +48,7 @@ const RouterLink = (props: RouterLinkProps) => {
   }
 
   const {
-    linkType = 'link',
+    linkType,
     children,
     className,
     variant = 'primary',

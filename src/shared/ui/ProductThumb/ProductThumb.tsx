@@ -18,7 +18,10 @@ const ProductThumb = (props: ProductThumbProps) => {
     <div className={clsx(styles.wrapper, className)}>
       <picture>
         <source srcSet={urlWebp} type='image/webp' />
-        <img src={urlPng} alt="product"/>
+        <img src={urlPng}
+          alt="product"
+          loading="lazy"
+          decoding="async"/>
       </picture>
     </div>
   )
